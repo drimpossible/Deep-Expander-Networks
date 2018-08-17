@@ -1,0 +1,1336 @@
+Namespace(acc_type='class', augment=True, batch_size=128, bottleneck=True, cachemode=True, cardinality=8, criterion='crossentropy', cuda=True, data_dir='/ssd_scratch/cvit/Imagenet12', dataset='imagenet12', decayinterval=30, decaylevel=10, droprate=0, epochs=90, evaluate=False, expandConfig=None, expandSize=2, from_modelzoo=False, growth=48, layers=100, learningratescheduler='imagenetschedular', logdir='../logs/imagenet_densenetexpander121_expandsize2_nov13', lr=0.1, manualSeed=123, maxlr=0.1, minlr=1e-05, model_def='densenetexpander121', momentum=0.9, name='imagenet_densenetexpander121_expandsize2_nov13', nclasses=1000, nesterov=True, ngpus=2, optimType='sgd', pretrained=False, pretrained_file='', printfreq=200, reduce=0.5, resume='savedmodels/densenetexpander121_imagenet_densenetexpander121_expandsize2_nov12_best.pth.tar', start_epoch=0, store='', tenCrop=False, tensorboard=True, testOnly=False, verbose=True, weightDecay=0.0001, weight_init=False, widen_factor=4, workers=8)
+DataParallel (
+  (module): DenseNet (
+    (features): Sequential (
+      (conv0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+      (norm0): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True)
+      (relu0): ReLU (inplace)
+      (pool0): MaxPool2d (size=(3, 3), stride=(2, 2), padding=(1, 1), dilation=(1, 1))
+      (denseblock1): _DenseBlock (
+        (denselayer1): _DenseLayer (
+          (norm.1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer2): _DenseLayer (
+          (norm.1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer3): _DenseLayer (
+          (norm.1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer4): _DenseLayer (
+          (norm.1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer5): _DenseLayer (
+          (norm.1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer6): _DenseLayer (
+          (norm.1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+      )
+      (transition1): _Transition (
+        (norm): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True)
+        (relu): ReLU (inplace)
+        (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (pool): AvgPool2d (size=2, stride=2, padding=0, ceil_mode=False, count_include_pad=True)
+      )
+      (denseblock2): _DenseBlock (
+        (denselayer1): _DenseLayer (
+          (norm.1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer2): _DenseLayer (
+          (norm.1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer3): _DenseLayer (
+          (norm.1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer4): _DenseLayer (
+          (norm.1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer5): _DenseLayer (
+          (norm.1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer6): _DenseLayer (
+          (norm.1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer7): _DenseLayer (
+          (norm.1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer8): _DenseLayer (
+          (norm.1): BatchNorm2d(352, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer9): _DenseLayer (
+          (norm.1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer10): _DenseLayer (
+          (norm.1): BatchNorm2d(416, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer11): _DenseLayer (
+          (norm.1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer12): _DenseLayer (
+          (norm.1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+      )
+      (transition2): _Transition (
+        (norm): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True)
+        (relu): ReLU (inplace)
+        (conv): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (pool): AvgPool2d (size=2, stride=2, padding=0, ceil_mode=False, count_include_pad=True)
+      )
+      (denseblock3): _DenseBlock (
+        (denselayer1): _DenseLayer (
+          (norm.1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer2): _DenseLayer (
+          (norm.1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer3): _DenseLayer (
+          (norm.1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer4): _DenseLayer (
+          (norm.1): BatchNorm2d(352, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer5): _DenseLayer (
+          (norm.1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer6): _DenseLayer (
+          (norm.1): BatchNorm2d(416, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer7): _DenseLayer (
+          (norm.1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer8): _DenseLayer (
+          (norm.1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer9): _DenseLayer (
+          (norm.1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer10): _DenseLayer (
+          (norm.1): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer11): _DenseLayer (
+          (norm.1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer12): _DenseLayer (
+          (norm.1): BatchNorm2d(608, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer13): _DenseLayer (
+          (norm.1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer14): _DenseLayer (
+          (norm.1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer15): _DenseLayer (
+          (norm.1): BatchNorm2d(704, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer16): _DenseLayer (
+          (norm.1): BatchNorm2d(736, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer17): _DenseLayer (
+          (norm.1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer18): _DenseLayer (
+          (norm.1): BatchNorm2d(800, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer19): _DenseLayer (
+          (norm.1): BatchNorm2d(832, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer20): _DenseLayer (
+          (norm.1): BatchNorm2d(864, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer21): _DenseLayer (
+          (norm.1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer22): _DenseLayer (
+          (norm.1): BatchNorm2d(928, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer23): _DenseLayer (
+          (norm.1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer24): _DenseLayer (
+          (norm.1): BatchNorm2d(992, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+      )
+      (transition3): _Transition (
+        (norm): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True)
+        (relu): ReLU (inplace)
+        (conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (pool): AvgPool2d (size=2, stride=2, padding=0, ceil_mode=False, count_include_pad=True)
+      )
+      (denseblock4): _DenseBlock (
+        (denselayer1): _DenseLayer (
+          (norm.1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer2): _DenseLayer (
+          (norm.1): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer3): _DenseLayer (
+          (norm.1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer4): _DenseLayer (
+          (norm.1): BatchNorm2d(608, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer5): _DenseLayer (
+          (norm.1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer6): _DenseLayer (
+          (norm.1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer7): _DenseLayer (
+          (norm.1): BatchNorm2d(704, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer8): _DenseLayer (
+          (norm.1): BatchNorm2d(736, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer9): _DenseLayer (
+          (norm.1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer10): _DenseLayer (
+          (norm.1): BatchNorm2d(800, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer11): _DenseLayer (
+          (norm.1): BatchNorm2d(832, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer12): _DenseLayer (
+          (norm.1): BatchNorm2d(864, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer13): _DenseLayer (
+          (norm.1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer14): _DenseLayer (
+          (norm.1): BatchNorm2d(928, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer15): _DenseLayer (
+          (norm.1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+        (denselayer16): _DenseLayer (
+          (norm.1): BatchNorm2d(992, eps=1e-05, momentum=0.1, affine=True)
+          (relu.1): ReLU (inplace)
+          (conv.1): ExpanderConv2d (
+          )
+          (norm.2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+          (relu.2): ReLU (inplace)
+          (conv.2): ExpanderConv2d (
+          )
+        )
+      )
+      (norm5): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True)
+    )
+    (classifier): Linear (1024 -> 1000)
+  )
+)
+=> loading checkpoint 'savedmodels/densenetexpander121_imagenet_densenetexpander121_expandsize2_nov12_best.pth.tar'
+=> loaded checkpoint 'savedmodels/densenetexpander121_imagenet_densenetexpander121_expandsize2_nov12_best.pth.tar' (epoch 77)
+Starting epoch number: 77 Learning rate: 0.0010000000000000002
+Train: [77][0/10010]	Time 11.606 (11.606)	Data 0.853 (0.853)	Loss 1.406	Prec@1 71.0938	Prec@5 86.7188
+Train: [77][200/10010]	Time 0.484 (97.241)	Data 0.005 (0.985)	Loss 1.431	Prec@1 66.6667	Prec@5 85.7743
+Train: [77][400/10010]	Time 0.455 (182.375)	Data 0.003 (1.085)	Loss 1.408	Prec@1 67.1018	Prec@5 86.2161
+Train: [77][600/10010]	Time 0.446 (267.834)	Data 0.002 (1.186)	Loss 1.396	Prec@1 67.2382	Prec@5 86.3626
+Train: [77][800/10010]	Time 0.441 (353.235)	Data 0.002 (1.288)	Loss 1.396	Prec@1 67.2411	Prec@5 86.3540
+Train: [77][1000/10010]	Time 0.438 (438.854)	Data 0.001 (1.391)	Loss 1.396	Prec@1 67.2312	Prec@5 86.3309
+Train: [77][1200/10010]	Time 0.437 (524.598)	Data 0.001 (1.493)	Loss 1.395	Prec@1 67.2356	Prec@5 86.3356
+Train: [77][1400/10010]	Time 0.436 (610.655)	Data 0.001 (1.593)	Loss 1.395	Prec@1 67.2795	Prec@5 86.3234
+Train: [77][1600/10010]	Time 0.435 (696.266)	Data 0.001 (1.692)	Loss 1.397	Prec@1 67.2641	Prec@5 86.2830
+Train: [77][1800/10010]	Time 0.434 (781.901)	Data 0.001 (1.796)	Loss 1.399	Prec@1 67.2270	Prec@5 86.2503
+Train: [77][2000/10010]	Time 0.434 (867.627)	Data 0.001 (1.898)	Loss 1.400	Prec@1 67.2246	Prec@5 86.2256
+Train: [77][2200/10010]	Time 0.433 (953.362)	Data 0.001 (1.996)	Loss 1.400	Prec@1 67.2368	Prec@5 86.2275
+Train: [77][2400/10010]	Time 0.433 (1039.498)	Data 0.001 (2.096)	Loss 1.400	Prec@1 67.2340	Prec@5 86.2508
+Train: [77][2600/10010]	Time 0.433 (1125.688)	Data 0.001 (2.198)	Loss 1.400	Prec@1 67.2641	Prec@5 86.2619
+Train: [77][2800/10010]	Time 0.433 (1211.593)	Data 0.001 (2.296)	Loss 1.400	Prec@1 67.2385	Prec@5 86.2524
+Train: [77][3000/10010]	Time 0.432 (1297.278)	Data 0.001 (2.398)	Loss 1.399	Prec@1 67.2659	Prec@5 86.2595
+Train: [77][3200/10010]	Time 0.432 (1382.907)	Data 0.001 (2.497)	Loss 1.398	Prec@1 67.2995	Prec@5 86.2584
+Train: [77][3400/10010]	Time 0.432 (1468.679)	Data 0.001 (2.597)	Loss 1.400	Prec@1 67.2803	Prec@5 86.2453
+Train: [77][3600/10010]	Time 0.432 (1554.478)	Data 0.001 (2.696)	Loss 1.400	Prec@1 67.2747	Prec@5 86.2332
+Train: [77][3800/10010]	Time 0.432 (1640.405)	Data 0.001 (2.795)	Loss 1.399	Prec@1 67.2907	Prec@5 86.2514
+Train: [77][4000/10010]	Time 0.431 (1726.065)	Data 0.001 (2.890)	Loss 1.399	Prec@1 67.2965	Prec@5 86.2523
+Train: [77][4200/10010]	Time 0.431 (1811.664)	Data 0.001 (2.988)	Loss 1.401	Prec@1 67.2747	Prec@5 86.2421
+Train: [77][4400/10010]	Time 0.431 (1897.302)	Data 0.001 (3.087)	Loss 1.400	Prec@1 67.2828	Prec@5 86.2547
+Train: [77][4600/10010]	Time 0.431 (1983.319)	Data 0.001 (3.184)	Loss 1.400	Prec@1 67.2890	Prec@5 86.2560
+Train: [77][4800/10010]	Time 0.431 (2069.320)	Data 0.001 (3.285)	Loss 1.400	Prec@1 67.2767	Prec@5 86.2597
+Train: [77][5000/10010]	Time 0.431 (2155.260)	Data 0.001 (3.385)	Loss 1.401	Prec@1 67.2636	Prec@5 86.2384
+Train: [77][5200/10010]	Time 0.431 (2240.931)	Data 0.001 (3.483)	Loss 1.400	Prec@1 67.2658	Prec@5 86.2526
+Train: [77][5400/10010]	Time 0.431 (2326.701)	Data 0.001 (3.584)	Loss 1.401	Prec@1 67.2393	Prec@5 86.2473
+Train: [77][5600/10010]	Time 0.431 (2412.688)	Data 0.001 (3.683)	Loss 1.401	Prec@1 67.2363	Prec@5 86.2442
+Train: [77][5800/10010]	Time 0.431 (2498.764)	Data 0.001 (3.780)	Loss 1.401	Prec@1 67.2472	Prec@5 86.2491
+Train: [77][6000/10010]	Time 0.431 (2584.758)	Data 0.001 (3.878)	Loss 1.401	Prec@1 67.2335	Prec@5 86.2492
+Train: [77][6200/10010]	Time 0.431 (2670.698)	Data 0.001 (3.973)	Loss 1.401	Prec@1 67.2308	Prec@5 86.2483
+Train: [77][6400/10010]	Time 0.431 (2756.269)	Data 0.001 (4.072)	Loss 1.401	Prec@1 67.2268	Prec@5 86.2440
+Train: [77][6600/10010]	Time 0.431 (2841.921)	Data 0.001 (4.168)	Loss 1.401	Prec@1 67.2250	Prec@5 86.2466
+Train: [77][6800/10010]	Time 0.430 (2927.669)	Data 0.001 (4.267)	Loss 1.401	Prec@1 67.2236	Prec@5 86.2491
+Train: [77][7000/10010]	Time 0.430 (3013.577)	Data 0.001 (4.364)	Loss 1.401	Prec@1 67.2105	Prec@5 86.2396
+Train: [77][7200/10010]	Time 0.430 (3099.415)	Data 0.001 (4.460)	Loss 1.401	Prec@1 67.2074	Prec@5 86.2405
+Train: [77][7400/10010]	Time 0.430 (3185.000)	Data 0.001 (4.559)	Loss 1.401	Prec@1 67.2096	Prec@5 86.2374
+Train: [77][7600/10010]	Time 0.430 (3270.704)	Data 0.001 (4.654)	Loss 1.401	Prec@1 67.2134	Prec@5 86.2417
+Train: [77][7800/10010]	Time 0.430 (3356.467)	Data 0.001 (4.749)	Loss 1.402	Prec@1 67.2003	Prec@5 86.2396
+Train: [77][8000/10010]	Time 0.430 (3442.187)	Data 0.001 (4.848)	Loss 1.402	Prec@1 67.2041	Prec@5 86.2418
+Train: [77][8200/10010]	Time 0.430 (3528.213)	Data 0.001 (4.943)	Loss 1.402	Prec@1 67.1976	Prec@5 86.2383
+Train: [77][8400/10010]	Time 0.430 (3613.970)	Data 0.001 (5.037)	Loss 1.402	Prec@1 67.1910	Prec@5 86.2397
+Train: [77][8600/10010]	Time 0.430 (3699.584)	Data 0.001 (5.131)	Loss 1.402	Prec@1 67.1807	Prec@5 86.2340
+Train: [77][8800/10010]	Time 0.430 (3785.311)	Data 0.001 (5.227)	Loss 1.402	Prec@1 67.1710	Prec@5 86.2302
+Train: [77][9000/10010]	Time 0.430 (3871.086)	Data 0.001 (5.325)	Loss 1.402	Prec@1 67.1689	Prec@5 86.2285
+Train: [77][9200/10010]	Time 0.430 (3957.010)	Data 0.001 (5.422)	Loss 1.402	Prec@1 67.1695	Prec@5 86.2305
+Train: [77][9400/10010]	Time 0.430 (4042.732)	Data 0.001 (5.518)	Loss 1.403	Prec@1 67.1658	Prec@5 86.2271
+Train: [77][9600/10010]	Time 0.430 (4128.355)	Data 0.001 (5.616)	Loss 1.403	Prec@1 67.1717	Prec@5 86.2213
+Train: [77][9800/10010]	Time 0.430 (4214.111)	Data 0.001 (5.715)	Loss 1.404	Prec@1 67.1607	Prec@5 86.2125
+Train: [77][10000/10010]	Time 0.430 (4299.863)	Data 0.001 (5.809)	Loss 1.404	Prec@1 67.1541	Prec@5 86.2108
+Train: [77]	Time 4300.282	Data 5.810	Loss 1.404	Prec@1 67.1543	Prec@5 86.2109	
+Val: [77]	Time 55.755	Data 1.226	Loss 1.193	Prec@1 70.3100	Prec@5 89.8160	
+Best Prec@1: [70.310]	
+Starting epoch number: 78 Learning rate: 0.0010000000000000002
+Train: [78][0/10010]	Time 1.721 (1.721)	Data 1.087 (1.087)	Loss 1.396	Prec@1 67.1875	Prec@5 85.9375
+Train: [78][200/10010]	Time 0.435 (87.525)	Data 0.006 (1.217)	Loss 1.383	Prec@1 67.6967	Prec@5 86.6294
+Train: [78][400/10010]	Time 0.433 (173.742)	Data 0.003 (1.351)	Loss 1.397	Prec@1 67.2148	Prec@5 86.3388
+Train: [78][600/10010]	Time 0.432 (259.871)	Data 0.002 (1.489)	Loss 1.402	Prec@1 67.0939	Prec@5 86.2404
+Train: [78][800/10010]	Time 0.432 (346.114)	Data 0.002 (1.627)	Loss 1.404	Prec@1 67.0568	Prec@5 86.2906
+Train: [78][1000/10010]	Time 0.432 (432.068)	Data 0.002 (1.766)	Loss 1.404	Prec@1 66.9885	Prec@5 86.2388
+Train: [78][1200/10010]	Time 0.431 (518.182)	Data 0.002 (1.894)	Loss 1.404	Prec@1 67.0262	Prec@5 86.2367
+Train: [78][1400/10010]	Time 0.431 (604.000)	Data 0.001 (2.014)	Loss 1.403	Prec@1 67.0548	Prec@5 86.2453
+Train: [78][1600/10010]	Time 0.431 (689.840)	Data 0.001 (2.135)	Loss 1.401	Prec@1 67.1328	Prec@5 86.2859
+Train: [78][1800/10010]	Time 0.431 (775.641)	Data 0.001 (2.253)	Loss 1.403	Prec@1 67.1125	Prec@5 86.2268
+Train: [78][2000/10010]	Time 0.431 (861.713)	Data 0.001 (2.369)	Loss 1.405	Prec@1 67.0840	Prec@5 86.1885
+Train: [78][2200/10010]	Time 0.431 (947.671)	Data 0.001 (2.491)	Loss 1.404	Prec@1 67.0941	Prec@5 86.2002
+Train: [78][2400/10010]	Time 0.430 (1033.449)	Data 0.001 (2.607)	Loss 1.403	Prec@1 67.1110	Prec@5 86.2157
+Train: [78][2600/10010]	Time 0.430 (1119.480)	Data 0.001 (2.725)	Loss 1.402	Prec@1 67.1100	Prec@5 86.2168
+Train: [78][2800/10010]	Time 0.430 (1205.152)	Data 0.001 (2.845)	Loss 1.402	Prec@1 67.1155	Prec@5 86.2028
+Train: [78][3000/10010]	Time 0.430 (1291.124)	Data 0.001 (2.962)	Loss 1.403	Prec@1 67.1240	Prec@5 86.1879
+Train: [78][3200/10010]	Time 0.430 (1376.898)	Data 0.001 (3.080)	Loss 1.402	Prec@1 67.1489	Prec@5 86.1874
+Train: [78][3400/10010]	Time 0.430 (1463.047)	Data 0.001 (3.201)	Loss 1.401	Prec@1 67.1866	Prec@5 86.2118
+Train: [78][3600/10010]	Time 0.430 (1548.829)	Data 0.001 (3.319)	Loss 1.401	Prec@1 67.1799	Prec@5 86.2115
+Train: [78][3800/10010]	Time 0.430 (1634.498)	Data 0.001 (3.441)	Loss 1.400	Prec@1 67.1780	Prec@5 86.2148
+Train: [78][4000/10010]	Time 0.430 (1720.540)	Data 0.001 (3.562)	Loss 1.400	Prec@1 67.1734	Prec@5 86.2185
+Train: [78][4200/10010]	Time 0.430 (1806.337)	Data 0.001 (3.680)	Loss 1.400	Prec@1 67.1717	Prec@5 86.2196
+Train: [78][4400/10010]	Time 0.430 (1892.369)	Data 0.001 (3.800)	Loss 1.401	Prec@1 67.1767	Prec@5 86.2164
+Train: [78][4600/10010]	Time 0.430 (1978.606)	Data 0.001 (3.922)	Loss 1.401	Prec@1 67.1763	Prec@5 86.2258
+Train: [78][4800/10010]	Time 0.430 (2064.578)	Data 0.001 (4.044)	Loss 1.401	Prec@1 67.1891	Prec@5 86.2288
+Train: [78][5000/10010]	Time 0.430 (2150.301)	Data 0.001 (4.163)	Loss 1.400	Prec@1 67.1803	Prec@5 86.2287
+Train: [78][5200/10010]	Time 0.430 (2236.254)	Data 0.001 (4.281)	Loss 1.401	Prec@1 67.1612	Prec@5 86.2134
+Train: [78][5400/10010]	Time 0.430 (2322.224)	Data 0.001 (4.399)	Loss 1.402	Prec@1 67.1435	Prec@5 86.1976
+Train: [78][5600/10010]	Time 0.430 (2408.132)	Data 0.001 (4.516)	Loss 1.402	Prec@1 67.1592	Prec@5 86.2006
+Train: [78][5800/10010]	Time 0.430 (2494.154)	Data 0.001 (4.635)	Loss 1.403	Prec@1 67.1301	Prec@5 86.1959
+Train: [78][6000/10010]	Time 0.430 (2579.979)	Data 0.001 (4.753)	Loss 1.403	Prec@1 67.1346	Prec@5 86.1997
+Train: [78][6200/10010]	Time 0.430 (2665.707)	Data 0.001 (4.874)	Loss 1.402	Prec@1 67.1294	Prec@5 86.2048
+Train: [78][6400/10010]	Time 0.430 (2751.594)	Data 0.001 (4.994)	Loss 1.402	Prec@1 67.1378	Prec@5 86.2105
+Train: [78][6600/10010]	Time 0.430 (2837.575)	Data 0.001 (5.113)	Loss 1.402	Prec@1 67.1363	Prec@5 86.2179
+Train: [78][6800/10010]	Time 0.430 (2923.571)	Data 0.001 (5.233)	Loss 1.402	Prec@1 67.1295	Prec@5 86.2146
+Train: [78][7000/10010]	Time 0.430 (3009.274)	Data 0.001 (5.350)	Loss 1.402	Prec@1 67.1349	Prec@5 86.2242
+Train: [78][7200/10010]	Time 0.430 (3094.952)	Data 0.001 (5.469)	Loss 1.402	Prec@1 67.1395	Prec@5 86.2258
+Train: [78][7400/10010]	Time 0.430 (3180.619)	Data 0.001 (5.588)	Loss 1.402	Prec@1 67.1339	Prec@5 86.2134
+Train: [78][7600/10010]	Time 0.430 (3266.517)	Data 0.001 (5.709)	Loss 1.402	Prec@1 67.1331	Prec@5 86.2082
+Train: [78][7800/10010]	Time 0.430 (3352.465)	Data 0.001 (5.827)	Loss 1.403	Prec@1 67.1368	Prec@5 86.2088
+Train: [78][8000/10010]	Time 0.430 (3438.449)	Data 0.001 (5.951)	Loss 1.403	Prec@1 67.1243	Prec@5 86.2020
+Train: [78][8200/10010]	Time 0.430 (3524.262)	Data 0.001 (6.073)	Loss 1.403	Prec@1 67.1212	Prec@5 86.2014
+Train: [78][8400/10010]	Time 0.430 (3609.993)	Data 0.001 (6.194)	Loss 1.403	Prec@1 67.1205	Prec@5 86.2040
+Train: [78][8600/10010]	Time 0.430 (3695.730)	Data 0.001 (6.315)	Loss 1.403	Prec@1 67.1254	Prec@5 86.2034
+Train: [78][8800/10010]	Time 0.430 (3781.742)	Data 0.001 (6.434)	Loss 1.402	Prec@1 67.1268	Prec@5 86.2077
+Train: [78][9000/10010]	Time 0.430 (3867.859)	Data 0.001 (6.555)	Loss 1.402	Prec@1 67.1188	Prec@5 86.2117
+Train: [78][9200/10010]	Time 0.430 (3953.676)	Data 0.001 (6.676)	Loss 1.403	Prec@1 67.1103	Prec@5 86.2052
+Train: [78][9400/10010]	Time 0.430 (4039.329)	Data 0.001 (6.796)	Loss 1.403	Prec@1 67.1045	Prec@5 86.1917
+Train: [78][9600/10010]	Time 0.430 (4125.090)	Data 0.001 (6.914)	Loss 1.403	Prec@1 67.1056	Prec@5 86.1915
+Train: [78][9800/10010]	Time 0.430 (4211.042)	Data 0.001 (7.034)	Loss 1.403	Prec@1 67.1143	Prec@5 86.1972
+Train: [78][10000/10010]	Time 0.430 (4296.911)	Data 0.001 (7.154)	Loss 1.403	Prec@1 67.1131	Prec@5 86.1936
+Train: [78]	Time 4297.331	Data 7.154	Loss 1.403	Prec@1 67.1133	Prec@5 86.1942	
+Val: [78]	Time 53.105	Data 1.228	Loss 1.201	Prec@1 70.1140	Prec@5 89.6640	
+Best Prec@1: [70.310]	
+Starting epoch number: 79 Learning rate: 0.0010000000000000002
+Train: [79][0/10010]	Time 1.492 (1.492)	Data 1.060 (1.060)	Loss 1.585	Prec@1 65.6250	Prec@5 85.1562
+Train: [79][200/10010]	Time 0.435 (87.440)	Data 0.006 (1.187)	Loss 1.385	Prec@1 67.1875	Prec@5 86.3378
+Train: [79][400/10010]	Time 0.432 (173.329)	Data 0.003 (1.315)	Loss 1.377	Prec@1 67.4642	Prec@5 86.5415
+Train: [79][600/10010]	Time 0.432 (259.694)	Data 0.002 (1.445)	Loss 1.377	Prec@1 67.5957	Prec@5 86.4315
+Train: [79][800/10010]	Time 0.432 (345.844)	Data 0.002 (1.571)	Loss 1.386	Prec@1 67.5113	Prec@5 86.3237
+Train: [79][1000/10010]	Time 0.431 (431.795)	Data 0.002 (1.697)	Loss 1.391	Prec@1 67.4271	Prec@5 86.2637
+Train: [79][1200/10010]	Time 0.431 (517.825)	Data 0.002 (1.823)	Loss 1.390	Prec@1 67.4178	Prec@5 86.2829
+Train: [79][1400/10010]	Time 0.431 (603.781)	Data 0.001 (1.952)	Loss 1.392	Prec@1 67.3687	Prec@5 86.2676
+Train: [79][1600/10010]	Time 0.431 (689.572)	Data 0.001 (2.077)	Loss 1.393	Prec@1 67.3476	Prec@5 86.2713
+Train: [79][1800/10010]	Time 0.431 (775.476)	Data 0.001 (2.203)	Loss 1.394	Prec@1 67.2916	Prec@5 86.2932
+Train: [79][2000/10010]	Time 0.431 (861.501)	Data 0.001 (2.328)	Loss 1.395	Prec@1 67.2730	Prec@5 86.2701
+Train: [79][2200/10010]	Time 0.430 (947.521)	Data 0.001 (2.453)	Loss 1.394	Prec@1 67.2837	Prec@5 86.2878
+Train: [79][2400/10010]	Time 0.430 (1033.435)	Data 0.001 (2.576)	Loss 1.394	Prec@1 67.2910	Prec@5 86.2935
+Train: [79][2600/10010]	Time 0.430 (1119.341)	Data 0.001 (2.703)	Loss 1.394	Prec@1 67.2656	Prec@5 86.2898
+Train: [79][2800/10010]	Time 0.430 (1205.178)	Data 0.001 (2.827)	Loss 1.393	Prec@1 67.2728	Prec@5 86.3118
+Train: [79][3000/10010]	Time 0.430 (1291.109)	Data 0.001 (2.955)	Loss 1.394	Prec@1 67.2734	Prec@5 86.3025
+Train: [79][3200/10010]	Time 0.430 (1377.007)	Data 0.001 (3.079)	Loss 1.394	Prec@1 67.2807	Prec@5 86.2985
+Train: [79][3400/10010]	Time 0.430 (1462.687)	Data 0.001 (3.203)	Loss 1.395	Prec@1 67.2897	Prec@5 86.2867
+Train: [79][3600/10010]	Time 0.430 (1548.875)	Data 0.001 (3.328)	Loss 1.395	Prec@1 67.2621	Prec@5 86.2829
+Train: [79][3800/10010]	Time 0.430 (1634.795)	Data 0.001 (3.454)	Loss 1.395	Prec@1 67.2720	Prec@5 86.2777
+Train: [79][4000/10010]	Time 0.430 (1720.737)	Data 0.001 (3.582)	Loss 1.395	Prec@1 67.2705	Prec@5 86.2677
+Train: [79][4200/10010]	Time 0.430 (1806.715)	Data 0.001 (3.708)	Loss 1.396	Prec@1 67.2632	Prec@5 86.2642
+Train: [79][4400/10010]	Time 0.430 (1892.821)	Data 0.001 (3.833)	Loss 1.397	Prec@1 67.2400	Prec@5 86.2581
+Train: [79][4600/10010]	Time 0.430 (1978.711)	Data 0.001 (3.959)	Loss 1.396	Prec@1 67.2486	Prec@5 86.2644
+Train: [79][4800/10010]	Time 0.430 (2064.650)	Data 0.001 (4.086)	Loss 1.397	Prec@1 67.2557	Prec@5 86.2561
+Train: [79][5000/10010]	Time 0.430 (2150.694)	Data 0.001 (4.216)	Loss 1.397	Prec@1 67.2548	Prec@5 86.2526
+Train: [79][5200/10010]	Time 0.430 (2236.635)	Data 0.001 (4.343)	Loss 1.397	Prec@1 67.2560	Prec@5 86.2559
+Train: [79][5400/10010]	Time 0.430 (2322.756)	Data 0.001 (4.470)	Loss 1.396	Prec@1 67.2558	Prec@5 86.2660
+Train: [79][5600/10010]	Time 0.430 (2408.793)	Data 0.001 (4.601)	Loss 1.396	Prec@1 67.2611	Prec@5 86.2698
+Train: [79][5800/10010]	Time 0.430 (2494.778)	Data 0.001 (4.731)	Loss 1.396	Prec@1 67.2707	Prec@5 86.2617
+Train: [79][6000/10010]	Time 0.430 (2580.865)	Data 0.001 (4.858)	Loss 1.397	Prec@1 67.2444	Prec@5 86.2440
+Train: [79][6200/10010]	Time 0.430 (2666.848)	Data 0.001 (4.984)	Loss 1.398	Prec@1 67.2456	Prec@5 86.2425
+Train: [79][6400/10010]	Time 0.430 (2752.870)	Data 0.001 (5.111)	Loss 1.397	Prec@1 67.2479	Prec@5 86.2526
+Train: [79][6600/10010]	Time 0.430 (2838.859)	Data 0.001 (5.235)	Loss 1.397	Prec@1 67.2458	Prec@5 86.2560
+Train: [79][6800/10010]	Time 0.430 (2924.905)	Data 0.001 (5.361)	Loss 1.397	Prec@1 67.2471	Prec@5 86.2529
+Train: [79][7000/10010]	Time 0.430 (3011.032)	Data 0.001 (5.488)	Loss 1.398	Prec@1 67.2372	Prec@5 86.2379
+Train: [79][7200/10010]	Time 0.430 (3097.199)	Data 0.001 (5.617)	Loss 1.398	Prec@1 67.2250	Prec@5 86.2386
+Train: [79][7400/10010]	Time 0.430 (3183.244)	Data 0.001 (5.741)	Loss 1.399	Prec@1 67.2223	Prec@5 86.2332
+Train: [79][7600/10010]	Time 0.430 (3269.119)	Data 0.001 (5.868)	Loss 1.398	Prec@1 67.2340	Prec@5 86.2416
+Train: [79][7800/10010]	Time 0.430 (3355.491)	Data 0.001 (5.993)	Loss 1.398	Prec@1 67.2356	Prec@5 86.2390
+Train: [79][8000/10010]	Time 0.430 (3441.316)	Data 0.001 (6.120)	Loss 1.399	Prec@1 67.2300	Prec@5 86.2338
+Train: [79][8200/10010]	Time 0.430 (3527.539)	Data 0.001 (6.246)	Loss 1.399	Prec@1 67.2223	Prec@5 86.2327
+Train: [79][8400/10010]	Time 0.430 (3613.779)	Data 0.001 (6.372)	Loss 1.399	Prec@1 67.2135	Prec@5 86.2296
+Train: [79][8600/10010]	Time 0.430 (3699.898)	Data 0.001 (6.499)	Loss 1.400	Prec@1 67.2068	Prec@5 86.2295
+Train: [79][8800/10010]	Time 0.430 (3785.968)	Data 0.001 (6.625)	Loss 1.400	Prec@1 67.2033	Prec@5 86.2311
+Train: [79][9000/10010]	Time 0.430 (3872.170)	Data 0.001 (6.751)	Loss 1.400	Prec@1 67.2018	Prec@5 86.2279
+Train: [79][9200/10010]	Time 0.430 (3958.512)	Data 0.001 (6.875)	Loss 1.400	Prec@1 67.1887	Prec@5 86.2238
+Train: [79][9400/10010]	Time 0.430 (4044.593)	Data 0.001 (7.002)	Loss 1.401	Prec@1 67.1827	Prec@5 86.2223
+Train: [79][9600/10010]	Time 0.430 (4130.597)	Data 0.001 (7.128)	Loss 1.401	Prec@1 67.1765	Prec@5 86.2217
+Train: [79][9800/10010]	Time 0.430 (4216.936)	Data 0.001 (7.256)	Loss 1.401	Prec@1 67.1648	Prec@5 86.2131
+Train: [79][10000/10010]	Time 0.430 (4302.986)	Data 0.001 (7.377)	Loss 1.401	Prec@1 67.1692	Prec@5 86.2140
+Train: [79]	Time 4303.413	Data 7.377	Loss 1.401	Prec@1 67.1697	Prec@5 86.2139	
+Val: [79]	Time 54.345	Data 1.190	Loss 1.194	Prec@1 70.2940	Prec@5 89.8080	
+Best Prec@1: [70.310]	
+Starting epoch number: 80 Learning rate: 0.0010000000000000002
+Train: [80][0/10010]	Time 1.357 (1.357)	Data 0.923 (0.923)	Loss 1.466	Prec@1 65.6250	Prec@5 86.7188
+Train: [80][200/10010]	Time 0.436 (87.573)	Data 0.005 (1.070)	Loss 1.379	Prec@1 67.5412	Prec@5 86.4817
+Train: [80][400/10010]	Time 0.434 (173.917)	Data 0.003 (1.215)	Loss 1.389	Prec@1 67.4719	Prec@5 86.3603
+Train: [80][600/10010]	Time 0.433 (260.398)	Data 0.002 (1.361)	Loss 1.395	Prec@1 67.4956	Prec@5 86.2157
+Train: [80][800/10010]	Time 0.433 (346.883)	Data 0.002 (1.495)	Loss 1.389	Prec@1 67.5835	Prec@5 86.2896
+Train: [80][1000/10010]	Time 0.432 (432.641)	Data 0.002 (1.605)	Loss 1.391	Prec@1 67.5184	Prec@5 86.2778
+Train: [80][1200/10010]	Time 0.432 (518.591)	Data 0.001 (1.715)	Loss 1.390	Prec@1 67.5056	Prec@5 86.2953
+Train: [80][1400/10010]	Time 0.431 (604.525)	Data 0.001 (1.823)	Loss 1.388	Prec@1 67.4948	Prec@5 86.3306
+Train: [80][1600/10010]	Time 0.431 (690.214)	Data 0.001 (1.931)	Loss 1.387	Prec@1 67.4813	Prec@5 86.3415
+Train: [80][1800/10010]	Time 0.431 (776.147)	Data 0.001 (2.038)	Loss 1.390	Prec@1 67.4278	Prec@5 86.3305
+Train: [80][2000/10010]	Time 0.431 (862.025)	Data 0.001 (2.148)	Loss 1.388	Prec@1 67.4464	Prec@5 86.3557
+Train: [80][2200/10010]	Time 0.431 (947.883)	Data 0.001 (2.258)	Loss 1.388	Prec@1 67.4267	Prec@5 86.3634
+Train: [80][2400/10010]	Time 0.430 (1033.629)	Data 0.001 (2.366)	Loss 1.388	Prec@1 67.4810	Prec@5 86.3559
+Train: [80][2600/10010]	Time 0.430 (1119.520)	Data 0.001 (2.479)	Loss 1.387	Prec@1 67.5179	Prec@5 86.3739
+Train: [80][2800/10010]	Time 0.430 (1205.420)	Data 0.001 (2.590)	Loss 1.386	Prec@1 67.5055	Prec@5 86.3779
+Train: [80][3000/10010]	Time 0.430 (1290.965)	Data 0.001 (2.698)	Loss 1.388	Prec@1 67.4981	Prec@5 86.3519
+Train: [80][3200/10010]	Time 0.430 (1376.690)	Data 0.001 (2.808)	Loss 1.388	Prec@1 67.4711	Prec@5 86.3495
+Train: [80][3400/10010]	Time 0.430 (1462.346)	Data 0.001 (2.913)	Loss 1.388	Prec@1 67.4386	Prec@5 86.3349
+Train: [80][3600/10010]	Time 0.430 (1548.096)	Data 0.001 (3.022)	Loss 1.390	Prec@1 67.4136	Prec@5 86.2996
+Train: [80][3800/10010]	Time 0.430 (1633.721)	Data 0.001 (3.131)	Loss 1.391	Prec@1 67.4054	Prec@5 86.2951
+Train: [80][4000/10010]	Time 0.430 (1719.417)	Data 0.001 (3.238)	Loss 1.390	Prec@1 67.4175	Prec@5 86.3003
+Train: [80][4200/10010]	Time 0.430 (1805.363)	Data 0.001 (3.345)	Loss 1.390	Prec@1 67.4056	Prec@5 86.2988
+Train: [80][4400/10010]	Time 0.430 (1891.021)	Data 0.001 (3.455)	Loss 1.391	Prec@1 67.3964	Prec@5 86.2885
+Train: [80][4600/10010]	Time 0.430 (1976.633)	Data 0.001 (3.562)	Loss 1.392	Prec@1 67.3712	Prec@5 86.2798
+Train: [80][4800/10010]	Time 0.430 (2062.435)	Data 0.001 (3.671)	Loss 1.393	Prec@1 67.3506	Prec@5 86.2786
+Train: [80][5000/10010]	Time 0.430 (2148.201)	Data 0.001 (3.781)	Loss 1.393	Prec@1 67.3587	Prec@5 86.2718
+Train: [80][5200/10010]	Time 0.429 (2233.803)	Data 0.001 (3.889)	Loss 1.393	Prec@1 67.3593	Prec@5 86.2675
+Train: [80][5400/10010]	Time 0.429 (2319.631)	Data 0.001 (3.995)	Loss 1.393	Prec@1 67.3540	Prec@5 86.2617
+Train: [80][5600/10010]	Time 0.429 (2405.465)	Data 0.001 (4.104)	Loss 1.393	Prec@1 67.3508	Prec@5 86.2586
+Train: [80][5800/10010]	Time 0.429 (2491.091)	Data 0.001 (4.214)	Loss 1.394	Prec@1 67.3386	Prec@5 86.2522
+Train: [80][6000/10010]	Time 0.429 (2576.596)	Data 0.001 (4.323)	Loss 1.394	Prec@1 67.3340	Prec@5 86.2567
+Train: [80][6200/10010]	Time 0.429 (2662.505)	Data 0.001 (4.434)	Loss 1.394	Prec@1 67.3422	Prec@5 86.2634
+Train: [80][6400/10010]	Time 0.429 (2748.257)	Data 0.001 (4.544)	Loss 1.394	Prec@1 67.3447	Prec@5 86.2698
+Train: [80][6600/10010]	Time 0.429 (2833.939)	Data 0.001 (4.650)	Loss 1.394	Prec@1 67.3255	Prec@5 86.2526
+Train: [80][6800/10010]	Time 0.429 (2919.832)	Data 0.001 (4.758)	Loss 1.394	Prec@1 67.3276	Prec@5 86.2539
+Train: [80][7000/10010]	Time 0.429 (3005.627)	Data 0.001 (4.867)	Loss 1.395	Prec@1 67.3215	Prec@5 86.2508
+Train: [80][7200/10010]	Time 0.429 (3091.393)	Data 0.001 (4.975)	Loss 1.395	Prec@1 67.3071	Prec@5 86.2467
+Train: [80][7400/10010]	Time 0.429 (3177.123)	Data 0.001 (5.086)	Loss 1.396	Prec@1 67.2888	Prec@5 86.2363
+Train: [80][7600/10010]	Time 0.429 (3262.856)	Data 0.001 (5.196)	Loss 1.396	Prec@1 67.2713	Prec@5 86.2370
+Train: [80][7800/10010]	Time 0.429 (3348.784)	Data 0.001 (5.305)	Loss 1.396	Prec@1 67.2529	Prec@5 86.2394
+Train: [80][8000/10010]	Time 0.429 (3434.556)	Data 0.001 (5.418)	Loss 1.397	Prec@1 67.2485	Prec@5 86.2428
+Train: [80][8200/10010]	Time 0.429 (3520.296)	Data 0.001 (5.526)	Loss 1.397	Prec@1 67.2307	Prec@5 86.2313
+Train: [80][8400/10010]	Time 0.429 (3606.241)	Data 0.001 (5.637)	Loss 1.397	Prec@1 67.2353	Prec@5 86.2344
+Train: [80][8600/10010]	Time 0.429 (3692.101)	Data 0.001 (5.748)	Loss 1.397	Prec@1 67.2448	Prec@5 86.2478
+Train: [80][8800/10010]	Time 0.429 (3777.820)	Data 0.001 (5.856)	Loss 1.397	Prec@1 67.2422	Prec@5 86.2490
+Train: [80][9000/10010]	Time 0.429 (3863.730)	Data 0.001 (5.968)	Loss 1.397	Prec@1 67.2387	Prec@5 86.2492
+Train: [80][9200/10010]	Time 0.429 (3949.644)	Data 0.001 (6.080)	Loss 1.397	Prec@1 67.2307	Prec@5 86.2473
+Train: [80][9400/10010]	Time 0.429 (4035.421)	Data 0.001 (6.191)	Loss 1.397	Prec@1 67.2206	Prec@5 86.2485
+Train: [80][9600/10010]	Time 0.429 (4121.299)	Data 0.001 (6.301)	Loss 1.397	Prec@1 67.2296	Prec@5 86.2480
+Train: [80][9800/10010]	Time 0.429 (4207.145)	Data 0.001 (6.407)	Loss 1.397	Prec@1 67.2205	Prec@5 86.2403
+Train: [80][10000/10010]	Time 0.429 (4293.033)	Data 0.001 (6.516)	Loss 1.398	Prec@1 67.2142	Prec@5 86.2378
+Train: [80]	Time 4293.502	Data 6.516	Loss 1.398	Prec@1 67.2141	Prec@5 86.2381	
+Val: [80]	Time 52.944	Data 1.092	Loss 1.197	Prec@1 70.1840	Prec@5 89.7740	
+Best Prec@1: [70.310]	
+Starting epoch number: 81 Learning rate: 0.0010000000000000002
+Train: [81][0/10010]	Time 1.515 (1.515)	Data 1.081 (1.081)	Loss 1.358	Prec@1 64.0625	Prec@5 89.0625
+Train: [81][200/10010]	Time 0.437 (87.859)	Data 0.006 (1.216)	Loss 1.380	Prec@1 67.6150	Prec@5 86.5711
+Train: [81][400/10010]	Time 0.433 (173.745)	Data 0.003 (1.321)	Loss 1.376	Prec@1 67.7077	Prec@5 86.6038
+Train: [81][600/10010]	Time 0.432 (259.723)	Data 0.002 (1.425)	Loss 1.385	Prec@1 67.5853	Prec@5 86.4822
+Train: [81][800/10010]	Time 0.431 (345.200)	Data 0.002 (1.531)	Loss 1.382	Prec@1 67.6752	Prec@5 86.5208
+Train: [81][1000/10010]	Time 0.430 (430.775)	Data 0.002 (1.640)	Loss 1.382	Prec@1 67.6300	Prec@5 86.4932
+Train: [81][1200/10010]	Time 0.430 (516.539)	Data 0.001 (1.744)	Loss 1.376	Prec@1 67.7385	Prec@5 86.5698
+Train: [81][1400/10010]	Time 0.430 (602.260)	Data 0.001 (1.847)	Loss 1.378	Prec@1 67.7251	Prec@5 86.5576
+Train: [81][1600/10010]	Time 0.430 (687.956)	Data 0.001 (1.952)	Loss 1.378	Prec@1 67.6896	Prec@5 86.5475
+Train: [81][1800/10010]	Time 0.430 (773.608)	Data 0.001 (2.055)	Loss 1.378	Prec@1 67.7024	Prec@5 86.5509
+Train: [81][2000/10010]	Time 0.429 (859.082)	Data 0.001 (2.155)	Loss 1.380	Prec@1 67.6935	Prec@5 86.5212
+Train: [81][2200/10010]	Time 0.429 (944.596)	Data 0.001 (2.259)	Loss 1.380	Prec@1 67.6795	Prec@5 86.5178
+Train: [81][2400/10010]	Time 0.429 (1030.257)	Data 0.001 (2.363)	Loss 1.381	Prec@1 67.6564	Prec@5 86.4939
+Train: [81][2600/10010]	Time 0.429 (1115.912)	Data 0.001 (2.469)	Loss 1.383	Prec@1 67.5855	Prec@5 86.4463
+Train: [81][2800/10010]	Time 0.429 (1201.690)	Data 0.001 (2.575)	Loss 1.384	Prec@1 67.5752	Prec@5 86.4295
+Train: [81][3000/10010]	Time 0.429 (1287.417)	Data 0.001 (2.683)	Loss 1.384	Prec@1 67.5824	Prec@5 86.4061
+Train: [81][3200/10010]	Time 0.429 (1373.140)	Data 0.001 (2.787)	Loss 1.385	Prec@1 67.5692	Prec@5 86.4076
+Train: [81][3400/10010]	Time 0.429 (1458.924)	Data 0.001 (2.898)	Loss 1.385	Prec@1 67.5488	Prec@5 86.3926
+Train: [81][3600/10010]	Time 0.429 (1544.446)	Data 0.001 (3.000)	Loss 1.387	Prec@1 67.5110	Prec@5 86.3859
+Train: [81][3800/10010]	Time 0.429 (1630.073)	Data 0.001 (3.107)	Loss 1.386	Prec@1 67.5192	Prec@5 86.3940
+Train: [81][4000/10010]	Time 0.429 (1715.772)	Data 0.001 (3.212)	Loss 1.387	Prec@1 67.4966	Prec@5 86.3724
+Train: [81][4200/10010]	Time 0.429 (1801.497)	Data 0.001 (3.314)	Loss 1.388	Prec@1 67.4824	Prec@5 86.3667
+Train: [81][4400/10010]	Time 0.429 (1887.232)	Data 0.001 (3.418)	Loss 1.388	Prec@1 67.4749	Prec@5 86.3689
+Train: [81][4600/10010]	Time 0.429 (1973.161)	Data 0.001 (3.525)	Loss 1.388	Prec@1 67.4741	Prec@5 86.3581
+Train: [81][4800/10010]	Time 0.429 (2058.901)	Data 0.001 (3.630)	Loss 1.388	Prec@1 67.4773	Prec@5 86.3731
+Train: [81][5000/10010]	Time 0.429 (2144.672)	Data 0.001 (3.733)	Loss 1.388	Prec@1 67.4723	Prec@5 86.3687
+Train: [81][5200/10010]	Time 0.429 (2230.300)	Data 0.001 (3.839)	Loss 1.389	Prec@1 67.4687	Prec@5 86.3698
+Train: [81][5400/10010]	Time 0.429 (2316.149)	Data 0.001 (3.945)	Loss 1.389	Prec@1 67.4664	Prec@5 86.3623
+Train: [81][5600/10010]	Time 0.429 (2402.044)	Data 0.001 (4.052)	Loss 1.389	Prec@1 67.4767	Prec@5 86.3714
+Train: [81][5800/10010]	Time 0.429 (2487.990)	Data 0.001 (4.157)	Loss 1.390	Prec@1 67.4486	Prec@5 86.3604
+Train: [81][6000/10010]	Time 0.429 (2573.579)	Data 0.001 (4.261)	Loss 1.390	Prec@1 67.4308	Prec@5 86.3553
+Train: [81][6200/10010]	Time 0.429 (2659.362)	Data 0.001 (4.368)	Loss 1.391	Prec@1 67.4174	Prec@5 86.3499
+Train: [81][6400/10010]	Time 0.429 (2745.038)	Data 0.001 (4.473)	Loss 1.391	Prec@1 67.4098	Prec@5 86.3560
+Train: [81][6600/10010]	Time 0.429 (2830.724)	Data 0.001 (4.576)	Loss 1.391	Prec@1 67.4024	Prec@5 86.3546
+Train: [81][6800/10010]	Time 0.429 (2916.535)	Data 0.001 (4.682)	Loss 1.392	Prec@1 67.3806	Prec@5 86.3392
+Train: [81][7000/10010]	Time 0.429 (3002.367)	Data 0.001 (4.789)	Loss 1.391	Prec@1 67.3982	Prec@5 86.3485
+Train: [81][7200/10010]	Time 0.429 (3088.112)	Data 0.001 (4.893)	Loss 1.392	Prec@1 67.3918	Prec@5 86.3366
+Train: [81][7400/10010]	Time 0.429 (3173.942)	Data 0.001 (5.000)	Loss 1.392	Prec@1 67.3896	Prec@5 86.3328
+Train: [81][7600/10010]	Time 0.429 (3259.954)	Data 0.001 (5.103)	Loss 1.393	Prec@1 67.3700	Prec@5 86.3245
+Train: [81][7800/10010]	Time 0.429 (3345.686)	Data 0.001 (5.207)	Loss 1.393	Prec@1 67.3720	Prec@5 86.3169
+Train: [81][8000/10010]	Time 0.429 (3431.449)	Data 0.001 (5.310)	Loss 1.393	Prec@1 67.3749	Prec@5 86.3133
+Train: [81][8200/10010]	Time 0.429 (3517.202)	Data 0.001 (5.416)	Loss 1.393	Prec@1 67.3670	Prec@5 86.3167
+Train: [81][8400/10010]	Time 0.429 (3603.039)	Data 0.001 (5.521)	Loss 1.394	Prec@1 67.3564	Prec@5 86.3132
+Train: [81][8600/10010]	Time 0.429 (3688.692)	Data 0.001 (5.626)	Loss 1.394	Prec@1 67.3527	Prec@5 86.3030
+Train: [81][8800/10010]	Time 0.429 (3774.573)	Data 0.001 (5.731)	Loss 1.394	Prec@1 67.3481	Prec@5 86.2947
+Train: [81][9000/10010]	Time 0.429 (3860.242)	Data 0.001 (5.835)	Loss 1.395	Prec@1 67.3451	Prec@5 86.2843
+Train: [81][9200/10010]	Time 0.429 (3946.133)	Data 0.001 (5.942)	Loss 1.395	Prec@1 67.3318	Prec@5 86.2811
+Train: [81][9400/10010]	Time 0.429 (4031.694)	Data 0.001 (6.046)	Loss 1.395	Prec@1 67.3231	Prec@5 86.2760
+Train: [81][9600/10010]	Time 0.429 (4117.392)	Data 0.001 (6.152)	Loss 1.395	Prec@1 67.3271	Prec@5 86.2802
+Train: [81][9800/10010]	Time 0.429 (4203.057)	Data 0.001 (6.256)	Loss 1.395	Prec@1 67.3364	Prec@5 86.2881
+Train: [81][10000/10010]	Time 0.429 (4289.104)	Data 0.001 (6.360)	Loss 1.394	Prec@1 67.3446	Prec@5 86.2952
+Train: [81]	Time 4289.523	Data 6.360	Loss 1.394	Prec@1 67.3441	Prec@5 86.2952	
+Val: [81]	Time 53.984	Data 1.194	Loss 1.191	Prec@1 70.3440	Prec@5 89.8360	
+Best Prec@1: [70.344]	
+Starting epoch number: 82 Learning rate: 0.0010000000000000002
+Train: [82][0/10010]	Time 1.447 (1.447)	Data 1.008 (1.008)	Loss 1.325	Prec@1 66.4062	Prec@5 86.7188
+Train: [82][200/10010]	Time 0.435 (87.426)	Data 0.006 (1.149)	Loss 1.385	Prec@1 67.6967	Prec@5 86.4078
+Train: [82][400/10010]	Time 0.433 (173.504)	Data 0.003 (1.289)	Loss 1.389	Prec@1 67.3550	Prec@5 86.2901
+Train: [82][600/10010]	Time 0.431 (259.131)	Data 0.002 (1.403)	Loss 1.392	Prec@1 67.2824	Prec@5 86.2963
+Train: [82][800/10010]	Time 0.431 (344.849)	Data 0.002 (1.510)	Loss 1.396	Prec@1 67.1982	Prec@5 86.2262
+Train: [82][1000/10010]	Time 0.430 (430.668)	Data 0.002 (1.620)	Loss 1.395	Prec@1 67.2601	Prec@5 86.2762
+Train: [82][1200/10010]	Time 0.430 (516.393)	Data 0.001 (1.729)	Loss 1.394	Prec@1 67.2578	Prec@5 86.3271
+Train: [82][1400/10010]	Time 0.430 (602.118)	Data 0.001 (1.836)	Loss 1.392	Prec@1 67.2918	Prec@5 86.3490
+Train: [82][1600/10010]	Time 0.430 (687.680)	Data 0.001 (1.943)	Loss 1.391	Prec@1 67.3354	Prec@5 86.3596
+Train: [82][1800/10010]	Time 0.429 (773.421)	Data 0.001 (2.054)	Loss 1.392	Prec@1 67.3163	Prec@5 86.3314
+Train: [82][2000/10010]	Time 0.429 (859.105)	Data 0.001 (2.162)	Loss 1.390	Prec@1 67.3741	Prec@5 86.3232
+Train: [82][2200/10010]	Time 0.429 (944.901)	Data 0.001 (2.272)	Loss 1.391	Prec@1 67.3561	Prec@5 86.3191
+Train: [82][2400/10010]	Time 0.429 (1030.640)	Data 0.001 (2.380)	Loss 1.392	Prec@1 67.3225	Prec@5 86.3127
+Train: [82][2600/10010]	Time 0.429 (1116.497)	Data 0.001 (2.491)	Loss 1.393	Prec@1 67.2866	Prec@5 86.3075
+Train: [82][2800/10010]	Time 0.429 (1202.377)	Data 0.001 (2.599)	Loss 1.393	Prec@1 67.2673	Prec@5 86.3090
+Train: [82][3000/10010]	Time 0.429 (1288.178)	Data 0.001 (2.706)	Loss 1.394	Prec@1 67.2567	Prec@5 86.2921
+Train: [82][3200/10010]	Time 0.429 (1374.067)	Data 0.001 (2.815)	Loss 1.392	Prec@1 67.2961	Prec@5 86.3175
+Train: [82][3400/10010]	Time 0.429 (1459.789)	Data 0.001 (2.925)	Loss 1.393	Prec@1 67.2720	Prec@5 86.3050
+Train: [82][3600/10010]	Time 0.429 (1545.675)	Data 0.001 (3.033)	Loss 1.392	Prec@1 67.2882	Prec@5 86.3089
+Train: [82][3800/10010]	Time 0.429 (1631.622)	Data 0.001 (3.141)	Loss 1.394	Prec@1 67.2666	Prec@5 86.2949
+Train: [82][4000/10010]	Time 0.429 (1717.434)	Data 0.001 (3.254)	Loss 1.393	Prec@1 67.2910	Prec@5 86.3144
+Train: [82][4200/10010]	Time 0.429 (1803.355)	Data 0.001 (3.365)	Loss 1.393	Prec@1 67.3030	Prec@5 86.3085
+Train: [82][4400/10010]	Time 0.429 (1889.266)	Data 0.001 (3.474)	Loss 1.391	Prec@1 67.3428	Prec@5 86.3398
+Train: [82][4600/10010]	Time 0.429 (1975.105)	Data 0.001 (3.586)	Loss 1.391	Prec@1 67.3532	Prec@5 86.3465
+Train: [82][4800/10010]	Time 0.429 (2060.941)	Data 0.001 (3.694)	Loss 1.392	Prec@1 67.3335	Prec@5 86.3336
+Train: [82][5000/10010]	Time 0.429 (2146.889)	Data 0.001 (3.802)	Loss 1.393	Prec@1 67.3175	Prec@5 86.3171
+Train: [82][5200/10010]	Time 0.429 (2232.925)	Data 0.001 (3.911)	Loss 1.395	Prec@1 67.2757	Prec@5 86.2995
+Train: [82][5400/10010]	Time 0.429 (2318.820)	Data 0.001 (4.019)	Loss 1.395	Prec@1 67.2685	Prec@5 86.3082
+Train: [82][5600/10010]	Time 0.429 (2404.742)	Data 0.001 (4.129)	Loss 1.395	Prec@1 67.2793	Prec@5 86.3138
+Train: [82][5800/10010]	Time 0.429 (2490.814)	Data 0.001 (4.238)	Loss 1.395	Prec@1 67.2787	Prec@5 86.3031
+Train: [82][6000/10010]	Time 0.429 (2576.711)	Data 0.001 (4.348)	Loss 1.395	Prec@1 67.2847	Prec@5 86.3024
+Train: [82][6200/10010]	Time 0.429 (2662.606)	Data 0.001 (4.456)	Loss 1.395	Prec@1 67.2811	Prec@5 86.3071
+Train: [82][6400/10010]	Time 0.429 (2748.636)	Data 0.001 (4.568)	Loss 1.395	Prec@1 67.2749	Prec@5 86.3018
+Train: [82][6600/10010]	Time 0.429 (2834.334)	Data 0.001 (4.675)	Loss 1.395	Prec@1 67.2641	Prec@5 86.2937
+Train: [82][6800/10010]	Time 0.429 (2920.026)	Data 0.001 (4.781)	Loss 1.396	Prec@1 67.2433	Prec@5 86.2783
+Train: [82][7000/10010]	Time 0.429 (3005.854)	Data 0.001 (4.897)	Loss 1.396	Prec@1 67.2453	Prec@5 86.2743
+Train: [82][7200/10010]	Time 0.429 (3091.701)	Data 0.001 (5.008)	Loss 1.397	Prec@1 67.2445	Prec@5 86.2730
+Train: [82][7400/10010]	Time 0.429 (3177.562)	Data 0.001 (5.118)	Loss 1.396	Prec@1 67.2561	Prec@5 86.2804
+Train: [82][7600/10010]	Time 0.429 (3263.425)	Data 0.001 (5.227)	Loss 1.397	Prec@1 67.2540	Prec@5 86.2653
+Train: [82][7800/10010]	Time 0.429 (3349.097)	Data 0.001 (5.337)	Loss 1.397	Prec@1 67.2581	Prec@5 86.2584
+Train: [82][8000/10010]	Time 0.429 (3434.961)	Data 0.001 (5.447)	Loss 1.397	Prec@1 67.2627	Prec@5 86.2549
+Train: [82][8200/10010]	Time 0.429 (3520.764)	Data 0.001 (5.560)	Loss 1.397	Prec@1 67.2679	Prec@5 86.2533
+Train: [82][8400/10010]	Time 0.429 (3606.434)	Data 0.001 (5.667)	Loss 1.397	Prec@1 67.2696	Prec@5 86.2490
+Train: [82][8600/10010]	Time 0.429 (3692.291)	Data 0.001 (5.778)	Loss 1.397	Prec@1 67.2751	Prec@5 86.2487
+Train: [82][8800/10010]	Time 0.429 (3778.018)	Data 0.001 (5.888)	Loss 1.397	Prec@1 67.2748	Prec@5 86.2503
+Train: [82][9000/10010]	Time 0.429 (3863.728)	Data 0.001 (5.996)	Loss 1.397	Prec@1 67.2698	Prec@5 86.2448
+Train: [82][9200/10010]	Time 0.429 (3949.718)	Data 0.001 (6.107)	Loss 1.397	Prec@1 67.2691	Prec@5 86.2492
+Train: [82][9400/10010]	Time 0.429 (4035.630)	Data 0.001 (6.218)	Loss 1.397	Prec@1 67.2679	Prec@5 86.2517
+Train: [82][9600/10010]	Time 0.429 (4121.515)	Data 0.001 (6.329)	Loss 1.397	Prec@1 67.2659	Prec@5 86.2566
+Train: [82][9800/10010]	Time 0.429 (4207.271)	Data 0.001 (6.440)	Loss 1.396	Prec@1 67.2691	Prec@5 86.2571
+Train: [82][10000/10010]	Time 0.429 (4293.252)	Data 0.001 (6.547)	Loss 1.396	Prec@1 67.2731	Prec@5 86.2611
+Train: [82]	Time 4293.674	Data 6.548	Loss 1.396	Prec@1 67.2743	Prec@5 86.2619	
+Val: [82]	Time 52.998	Data 1.310	Loss 1.195	Prec@1 70.2660	Prec@5 89.6480	
+Best Prec@1: [70.344]	
+Starting epoch number: 83 Learning rate: 0.0010000000000000002
+Train: [83][0/10010]	Time 1.512 (1.512)	Data 1.079 (1.079)	Loss 1.444	Prec@1 68.7500	Prec@5 84.3750
+Train: [83][200/10010]	Time 0.437 (87.845)	Data 0.006 (1.209)	Loss 1.381	Prec@1 68.1709	Prec@5 86.4039
+Train: [83][400/10010]	Time 0.434 (174.082)	Data 0.003 (1.339)	Loss 1.386	Prec@1 67.7934	Prec@5 86.3720
+Train: [83][600/10010]	Time 0.433 (260.184)	Data 0.002 (1.469)	Loss 1.376	Prec@1 67.8583	Prec@5 86.5225
+Train: [83][800/10010]	Time 0.433 (346.734)	Data 0.002 (1.601)	Loss 1.375	Prec@1 67.8107	Prec@5 86.5500
+Train: [83][1000/10010]	Time 0.432 (432.863)	Data 0.002 (1.731)	Loss 1.376	Prec@1 67.7096	Prec@5 86.5790
+Train: [83][1200/10010]	Time 0.432 (519.201)	Data 0.002 (1.857)	Loss 1.379	Prec@1 67.6272	Prec@5 86.5626
+Train: [83][1400/10010]	Time 0.432 (605.679)	Data 0.001 (1.987)	Loss 1.381	Prec@1 67.5449	Prec@5 86.5052
+Train: [83][1600/10010]	Time 0.432 (691.928)	Data 0.001 (2.114)	Loss 1.382	Prec@1 67.5413	Prec@5 86.4699
+Train: [83][1800/10010]	Time 0.432 (778.464)	Data 0.001 (2.242)	Loss 1.383	Prec@1 67.5458	Prec@5 86.4242
+Train: [83][2000/10010]	Time 0.432 (864.935)	Data 0.001 (2.373)	Loss 1.383	Prec@1 67.4916	Prec@5 86.4185
+Train: [83][2200/10010]	Time 0.432 (951.126)	Data 0.001 (2.502)	Loss 1.382	Prec@1 67.5474	Prec@5 86.4341
+Train: [83][2400/10010]	Time 0.432 (1037.704)	Data 0.001 (2.633)	Loss 1.383	Prec@1 67.5454	Prec@5 86.4119
+Train: [83][2600/10010]	Time 0.432 (1123.918)	Data 0.001 (2.764)	Loss 1.384	Prec@1 67.5482	Prec@5 86.3914
+Train: [83][2800/10010]	Time 0.432 (1210.200)	Data 0.001 (2.898)	Loss 1.384	Prec@1 67.5375	Prec@5 86.4036
+Train: [83][3000/10010]	Time 0.432 (1296.644)	Data 0.001 (3.031)	Loss 1.383	Prec@1 67.5762	Prec@5 86.4235
+Train: [83][3200/10010]	Time 0.432 (1383.037)	Data 0.001 (3.162)	Loss 1.384	Prec@1 67.5524	Prec@5 86.4247
+Train: [83][3400/10010]	Time 0.432 (1469.123)	Data 0.001 (3.296)	Loss 1.384	Prec@1 67.5192	Prec@5 86.4309
+Train: [83][3600/10010]	Time 0.432 (1555.304)	Data 0.001 (3.428)	Loss 1.384	Prec@1 67.4899	Prec@5 86.4415
+Train: [83][3800/10010]	Time 0.432 (1641.687)	Data 0.001 (3.561)	Loss 1.384	Prec@1 67.4913	Prec@5 86.4431
+Train: [83][4000/10010]	Time 0.432 (1727.829)	Data 0.001 (3.695)	Loss 1.385	Prec@1 67.4825	Prec@5 86.4194
+Train: [83][4200/10010]	Time 0.432 (1814.020)	Data 0.001 (3.827)	Loss 1.385	Prec@1 67.4696	Prec@5 86.4245
+Train: [83][4400/10010]	Time 0.432 (1900.331)	Data 0.001 (3.957)	Loss 1.385	Prec@1 67.4627	Prec@5 86.4294
+Train: [83][4600/10010]	Time 0.432 (1986.470)	Data 0.001 (4.088)	Loss 1.386	Prec@1 67.4526	Prec@5 86.4151
+Train: [83][4800/10010]	Time 0.432 (2072.892)	Data 0.001 (4.219)	Loss 1.387	Prec@1 67.4236	Prec@5 86.4052
+Train: [83][5000/10010]	Time 0.432 (2159.035)	Data 0.001 (4.350)	Loss 1.387	Prec@1 67.4110	Prec@5 86.4132
+Train: [83][5200/10010]	Time 0.432 (2245.341)	Data 0.001 (4.482)	Loss 1.387	Prec@1 67.3999	Prec@5 86.4092
+Train: [83][5400/10010]	Time 0.432 (2331.892)	Data 0.001 (4.614)	Loss 1.387	Prec@1 67.4026	Prec@5 86.4133
+Train: [83][5600/10010]	Time 0.432 (2418.163)	Data 0.001 (4.747)	Loss 1.388	Prec@1 67.3990	Prec@5 86.4070
+Train: [83][5800/10010]	Time 0.432 (2504.563)	Data 0.001 (4.881)	Loss 1.389	Prec@1 67.3836	Prec@5 86.3934
+Train: [83][6000/10010]	Time 0.432 (2590.905)	Data 0.001 (5.013)	Loss 1.389	Prec@1 67.3903	Prec@5 86.3830
+Train: [83][6200/10010]	Time 0.432 (2677.215)	Data 0.001 (5.142)	Loss 1.389	Prec@1 67.3931	Prec@5 86.3820
+Train: [83][6400/10010]	Time 0.432 (2763.432)	Data 0.001 (5.275)	Loss 1.389	Prec@1 67.3862	Prec@5 86.3870
+Train: [83][6600/10010]	Time 0.432 (2849.829)	Data 0.001 (5.407)	Loss 1.390	Prec@1 67.3682	Prec@5 86.3729
+Train: [83][6800/10010]	Time 0.432 (2936.422)	Data 0.001 (5.539)	Loss 1.390	Prec@1 67.3811	Prec@5 86.3792
+Train: [83][7000/10010]	Time 0.432 (3022.605)	Data 0.001 (5.671)	Loss 1.390	Prec@1 67.3816	Prec@5 86.3725
+Train: [83][7200/10010]	Time 0.432 (3109.041)	Data 0.001 (5.802)	Loss 1.390	Prec@1 67.3739	Prec@5 86.3746
+Train: [83][7400/10010]	Time 0.432 (3195.566)	Data 0.001 (5.935)	Loss 1.390	Prec@1 67.3825	Prec@5 86.3793
+Train: [83][7600/10010]	Time 0.432 (3281.923)	Data 0.001 (6.067)	Loss 1.390	Prec@1 67.3797	Prec@5 86.3751
+Train: [83][7800/10010]	Time 0.432 (3368.076)	Data 0.001 (6.200)	Loss 1.390	Prec@1 67.3886	Prec@5 86.3838
+Train: [83][8000/10010]	Time 0.432 (3454.273)	Data 0.001 (6.330)	Loss 1.390	Prec@1 67.3913	Prec@5 86.3905
+Train: [83][8200/10010]	Time 0.432 (3540.269)	Data 0.001 (6.459)	Loss 1.390	Prec@1 67.3847	Prec@5 86.3838
+Train: [83][8400/10010]	Time 0.432 (3626.331)	Data 0.001 (6.590)	Loss 1.390	Prec@1 67.3838	Prec@5 86.3839
+Train: [83][8600/10010]	Time 0.432 (3712.447)	Data 0.001 (6.724)	Loss 1.390	Prec@1 67.3854	Prec@5 86.3879
+Train: [83][8800/10010]	Time 0.432 (3798.422)	Data 0.001 (6.855)	Loss 1.390	Prec@1 67.3768	Prec@5 86.3788
+Train: [83][9000/10010]	Time 0.432 (3884.566)	Data 0.001 (6.987)	Loss 1.390	Prec@1 67.3849	Prec@5 86.3803
+Train: [83][9200/10010]	Time 0.432 (3970.471)	Data 0.001 (7.118)	Loss 1.390	Prec@1 67.3900	Prec@5 86.3771
+Train: [83][9400/10010]	Time 0.431 (4056.432)	Data 0.001 (7.248)	Loss 1.391	Prec@1 67.3893	Prec@5 86.3729
+Train: [83][9600/10010]	Time 0.431 (4142.413)	Data 0.001 (7.379)	Loss 1.391	Prec@1 67.3915	Prec@5 86.3719
+Train: [83][9800/10010]	Time 0.431 (4228.494)	Data 0.001 (7.508)	Loss 1.391	Prec@1 67.3870	Prec@5 86.3707
+Train: [83][10000/10010]	Time 0.431 (4314.423)	Data 0.001 (7.636)	Loss 1.391	Prec@1 67.3797	Prec@5 86.3649
+Train: [83]	Time 4314.916	Data 7.636	Loss 1.391	Prec@1 67.3791	Prec@5 86.3646	
+Val: [83]	Time 53.721	Data 1.291	Loss 1.190	Prec@1 70.2620	Prec@5 89.8700	
+Best Prec@1: [70.344]	
+Starting epoch number: 84 Learning rate: 0.0010000000000000002
+Train: [84][0/10010]	Time 1.746 (1.746)	Data 1.215 (1.215)	Loss 1.164	Prec@1 73.4375	Prec@5 85.9375
+Train: [84][200/10010]	Time 0.436 (87.715)	Data 0.007 (1.346)	Loss 1.376	Prec@1 67.6967	Prec@5 86.4739
+Train: [84][400/10010]	Time 0.434 (173.847)	Data 0.004 (1.468)	Loss 1.372	Prec@1 67.9376	Prec@5 86.4928
+Train: [84][600/10010]	Time 0.432 (259.751)	Data 0.003 (1.590)	Loss 1.373	Prec@1 67.8102	Prec@5 86.5186
+Train: [84][800/10010]	Time 0.432 (345.736)	Data 0.002 (1.711)	Loss 1.381	Prec@1 67.6079	Prec@5 86.4934
+Train: [84][1000/10010]	Time 0.431 (431.864)	Data 0.002 (1.833)	Loss 1.378	Prec@1 67.6191	Prec@5 86.5268
+Train: [84][1200/10010]	Time 0.431 (517.936)	Data 0.002 (1.957)	Loss 1.377	Prec@1 67.6702	Prec@5 86.5542
+Train: [84][1400/10010]	Time 0.431 (603.826)	Data 0.001 (2.081)	Loss 1.379	Prec@1 67.6593	Prec@5 86.5336
+Train: [84][1600/10010]	Time 0.431 (689.997)	Data 0.001 (2.203)	Loss 1.379	Prec@1 67.6589	Prec@5 86.5255
+Train: [84][1800/10010]	Time 0.431 (775.944)	Data 0.001 (2.323)	Loss 1.379	Prec@1 67.6807	Prec@5 86.5088
+Train: [84][2000/10010]	Time 0.431 (861.849)	Data 0.001 (2.442)	Loss 1.379	Prec@1 67.6548	Prec@5 86.4923
+Train: [84][2200/10010]	Time 0.431 (947.869)	Data 0.001 (2.564)	Loss 1.380	Prec@1 67.6269	Prec@5 86.4880
+Train: [84][2400/10010]	Time 0.431 (1033.958)	Data 0.001 (2.684)	Loss 1.382	Prec@1 67.5841	Prec@5 86.4558
+Train: [84][2600/10010]	Time 0.431 (1119.881)	Data 0.001 (2.806)	Loss 1.384	Prec@1 67.5563	Prec@5 86.4283
+Train: [84][2800/10010]	Time 0.431 (1205.901)	Data 0.001 (2.930)	Loss 1.385	Prec@1 67.5091	Prec@5 86.4075
+Train: [84][3000/10010]	Time 0.431 (1292.089)	Data 0.001 (3.053)	Loss 1.386	Prec@1 67.4976	Prec@5 86.4011
+Train: [84][3200/10010]	Time 0.430 (1377.927)	Data 0.001 (3.173)	Loss 1.386	Prec@1 67.4794	Prec@5 86.4015
+Train: [84][3400/10010]	Time 0.430 (1463.836)	Data 0.001 (3.291)	Loss 1.387	Prec@1 67.4583	Prec@5 86.3942
+Train: [84][3600/10010]	Time 0.430 (1549.829)	Data 0.001 (3.412)	Loss 1.387	Prec@1 67.4713	Prec@5 86.3868
+Train: [84][3800/10010]	Time 0.430 (1635.891)	Data 0.001 (3.531)	Loss 1.387	Prec@1 67.4707	Prec@5 86.3942
+Train: [84][4000/10010]	Time 0.430 (1721.929)	Data 0.001 (3.656)	Loss 1.386	Prec@1 67.4804	Prec@5 86.3936
+Train: [84][4200/10010]	Time 0.430 (1807.783)	Data 0.001 (3.779)	Loss 1.387	Prec@1 67.4482	Prec@5 86.3835
+Train: [84][4400/10010]	Time 0.430 (1893.732)	Data 0.001 (3.901)	Loss 1.388	Prec@1 67.4474	Prec@5 86.3769
+Train: [84][4600/10010]	Time 0.430 (1979.788)	Data 0.001 (4.019)	Loss 1.387	Prec@1 67.4446	Prec@5 86.3822
+Train: [84][4800/10010]	Time 0.430 (2065.684)	Data 0.001 (4.143)	Loss 1.388	Prec@1 67.4318	Prec@5 86.3894
+Train: [84][5000/10010]	Time 0.430 (2151.495)	Data 0.001 (4.266)	Loss 1.387	Prec@1 67.4462	Prec@5 86.3994
+Train: [84][5200/10010]	Time 0.430 (2237.738)	Data 0.001 (4.389)	Loss 1.387	Prec@1 67.4367	Prec@5 86.3923
+Train: [84][5400/10010]	Time 0.430 (2323.659)	Data 0.001 (4.510)	Loss 1.388	Prec@1 67.4272	Prec@5 86.3848
+Train: [84][5600/10010]	Time 0.430 (2409.520)	Data 0.001 (4.630)	Loss 1.389	Prec@1 67.4073	Prec@5 86.3820
+Train: [84][5800/10010]	Time 0.430 (2495.348)	Data 0.001 (4.751)	Loss 1.389	Prec@1 67.4090	Prec@5 86.3784
+Train: [84][6000/10010]	Time 0.430 (2581.206)	Data 0.001 (4.871)	Loss 1.389	Prec@1 67.4033	Prec@5 86.3722
+Train: [84][6200/10010]	Time 0.430 (2667.145)	Data 0.001 (4.991)	Loss 1.389	Prec@1 67.4056	Prec@5 86.3695
+Train: [84][6400/10010]	Time 0.430 (2752.906)	Data 0.001 (5.113)	Loss 1.389	Prec@1 67.3864	Prec@5 86.3638
+Train: [84][6600/10010]	Time 0.430 (2839.019)	Data 0.001 (5.234)	Loss 1.390	Prec@1 67.3753	Prec@5 86.3580
+Train: [84][6800/10010]	Time 0.430 (2925.021)	Data 0.001 (5.354)	Loss 1.390	Prec@1 67.3735	Prec@5 86.3631
+Train: [84][7000/10010]	Time 0.430 (3011.094)	Data 0.001 (5.474)	Loss 1.390	Prec@1 67.3827	Prec@5 86.3681
+Train: [84][7200/10010]	Time 0.430 (3097.124)	Data 0.001 (5.594)	Loss 1.390	Prec@1 67.3756	Prec@5 86.3576
+Train: [84][7400/10010]	Time 0.430 (3183.508)	Data 0.001 (5.716)	Loss 1.390	Prec@1 67.3727	Prec@5 86.3463
+Train: [84][7600/10010]	Time 0.430 (3269.443)	Data 0.001 (5.835)	Loss 1.390	Prec@1 67.3705	Prec@5 86.3472
+Train: [84][7800/10010]	Time 0.430 (3355.562)	Data 0.001 (5.957)	Loss 1.390	Prec@1 67.3722	Prec@5 86.3575
+Train: [84][8000/10010]	Time 0.430 (3441.500)	Data 0.001 (6.077)	Loss 1.390	Prec@1 67.3839	Prec@5 86.3635
+Train: [84][8200/10010]	Time 0.430 (3527.854)	Data 0.001 (6.201)	Loss 1.390	Prec@1 67.3920	Prec@5 86.3586
+Train: [84][8400/10010]	Time 0.430 (3613.851)	Data 0.001 (6.322)	Loss 1.390	Prec@1 67.3820	Prec@5 86.3579
+Train: [84][8600/10010]	Time 0.430 (3699.786)	Data 0.001 (6.446)	Loss 1.390	Prec@1 67.3842	Prec@5 86.3561
+Train: [84][8800/10010]	Time 0.430 (3785.783)	Data 0.001 (6.567)	Loss 1.390	Prec@1 67.3859	Prec@5 86.3604
+Train: [84][9000/10010]	Time 0.430 (3871.694)	Data 0.001 (6.689)	Loss 1.390	Prec@1 67.3938	Prec@5 86.3659
+Train: [84][9200/10010]	Time 0.430 (3957.578)	Data 0.001 (6.810)	Loss 1.390	Prec@1 67.3931	Prec@5 86.3643
+Train: [84][9400/10010]	Time 0.430 (4043.386)	Data 0.001 (6.930)	Loss 1.390	Prec@1 67.3864	Prec@5 86.3626
+Train: [84][9600/10010]	Time 0.430 (4129.201)	Data 0.001 (7.052)	Loss 1.390	Prec@1 67.3900	Prec@5 86.3641
+Train: [84][9800/10010]	Time 0.430 (4215.207)	Data 0.001 (7.176)	Loss 1.390	Prec@1 67.3922	Prec@5 86.3686
+Train: [84][10000/10010]	Time 0.430 (4301.145)	Data 0.001 (7.294)	Loss 1.390	Prec@1 67.3899	Prec@5 86.3657
+Train: [84]	Time 4301.564	Data 7.294	Loss 1.390	Prec@1 67.3900	Prec@5 86.3655	
+Val: [84]	Time 54.692	Data 1.337	Loss 1.189	Prec@1 70.4340	Prec@5 89.9180	
+Best Prec@1: [70.434]	
+Starting epoch number: 85 Learning rate: 0.0010000000000000002
+Train: [85][0/10010]	Time 1.454 (1.454)	Data 1.022 (1.022)	Loss 1.377	Prec@1 67.9688	Prec@5 88.2812
+Train: [85][200/10010]	Time 0.435 (87.364)	Data 0.006 (1.142)	Loss 1.378	Prec@1 68.0271	Prec@5 86.6954
+Train: [85][400/10010]	Time 0.432 (173.224)	Data 0.003 (1.242)	Loss 1.377	Prec@1 67.7447	Prec@5 86.5843
+Train: [85][600/10010]	Time 0.431 (258.859)	Data 0.002 (1.345)	Loss 1.373	Prec@1 67.7829	Prec@5 86.6967
+Train: [85][800/10010]	Time 0.430 (344.487)	Data 0.002 (1.444)	Loss 1.377	Prec@1 67.7278	Prec@5 86.6007
+Train: [85][1000/10010]	Time 0.430 (430.365)	Data 0.002 (1.548)	Loss 1.377	Prec@1 67.6878	Prec@5 86.6259
+Train: [85][1200/10010]	Time 0.430 (516.117)	Data 0.001 (1.651)	Loss 1.372	Prec@1 67.8094	Prec@5 86.6999
+Train: [85][1400/10010]	Time 0.430 (601.764)	Data 0.001 (1.751)	Loss 1.372	Prec@1 67.7613	Prec@5 86.7160
+Train: [85][1600/10010]	Time 0.429 (687.490)	Data 0.001 (1.855)	Loss 1.375	Prec@1 67.6994	Prec@5 86.6509
+Train: [85][1800/10010]	Time 0.429 (773.151)	Data 0.001 (1.958)	Loss 1.375	Prec@1 67.7076	Prec@5 86.6372
+Train: [85][2000/10010]	Time 0.429 (859.031)	Data 0.001 (2.060)	Loss 1.377	Prec@1 67.6927	Prec@5 86.5809
+Train: [85][2200/10010]	Time 0.429 (944.702)	Data 0.001 (2.162)	Loss 1.378	Prec@1 67.6486	Prec@5 86.5604
+Train: [85][2400/10010]	Time 0.429 (1030.224)	Data 0.001 (2.259)	Loss 1.379	Prec@1 67.6616	Prec@5 86.5466
+Train: [85][2600/10010]	Time 0.429 (1115.989)	Data 0.001 (2.362)	Loss 1.379	Prec@1 67.6405	Prec@5 86.5451
+Train: [85][2800/10010]	Time 0.429 (1201.783)	Data 0.001 (2.464)	Loss 1.380	Prec@1 67.6407	Prec@5 86.5439
+Train: [85][3000/10010]	Time 0.429 (1287.443)	Data 0.001 (2.570)	Loss 1.380	Prec@1 67.6170	Prec@5 86.5360
+Train: [85][3200/10010]	Time 0.429 (1373.273)	Data 0.001 (2.676)	Loss 1.381	Prec@1 67.6192	Prec@5 86.5355
+Train: [85][3400/10010]	Time 0.429 (1458.924)	Data 0.001 (2.775)	Loss 1.380	Prec@1 67.6230	Prec@5 86.5354
+Train: [85][3600/10010]	Time 0.429 (1544.574)	Data 0.001 (2.876)	Loss 1.381	Prec@1 67.6125	Prec@5 86.5259
+Train: [85][3800/10010]	Time 0.429 (1630.476)	Data 0.001 (2.979)	Loss 1.380	Prec@1 67.5969	Prec@5 86.5366
+Train: [85][4000/10010]	Time 0.429 (1716.265)	Data 0.001 (3.078)	Loss 1.381	Prec@1 67.5880	Prec@5 86.5243
+Train: [85][4200/10010]	Time 0.429 (1802.102)	Data 0.001 (3.181)	Loss 1.380	Prec@1 67.5968	Prec@5 86.5270
+Train: [85][4400/10010]	Time 0.429 (1888.052)	Data 0.001 (3.297)	Loss 1.381	Prec@1 67.5789	Prec@5 86.5080
+Train: [85][4600/10010]	Time 0.429 (1974.122)	Data 0.001 (3.400)	Loss 1.381	Prec@1 67.5769	Prec@5 86.5045
+Train: [85][4800/10010]	Time 0.429 (2059.832)	Data 0.001 (3.500)	Loss 1.381	Prec@1 67.5450	Prec@5 86.5083
+Train: [85][5000/10010]	Time 0.429 (2145.525)	Data 0.001 (3.601)	Loss 1.382	Prec@1 67.5329	Prec@5 86.5002
+Train: [85][5200/10010]	Time 0.429 (2231.235)	Data 0.001 (3.703)	Loss 1.383	Prec@1 67.5153	Prec@5 86.4895
+Train: [85][5400/10010]	Time 0.429 (2317.340)	Data 0.001 (3.818)	Loss 1.383	Prec@1 67.5169	Prec@5 86.4775
+Train: [85][5600/10010]	Time 0.429 (2403.491)	Data 0.001 (3.939)	Loss 1.383	Prec@1 67.5179	Prec@5 86.4742
+Train: [85][5800/10010]	Time 0.429 (2489.484)	Data 0.001 (4.084)	Loss 1.384	Prec@1 67.4982	Prec@5 86.4573
+Train: [85][6000/10010]	Time 0.429 (2575.799)	Data 0.001 (4.239)	Loss 1.385	Prec@1 67.4856	Prec@5 86.4382
+Train: [85][6200/10010]	Time 0.429 (2662.147)	Data 0.001 (4.396)	Loss 1.386	Prec@1 67.4717	Prec@5 86.4257
+Train: [85][6400/10010]	Time 0.429 (2748.469)	Data 0.001 (4.557)	Loss 1.387	Prec@1 67.4642	Prec@5 86.4118
+Train: [85][6600/10010]	Time 0.429 (2834.445)	Data 0.001 (4.714)	Loss 1.386	Prec@1 67.4636	Prec@5 86.4101
+Train: [85][6800/10010]	Time 0.429 (2920.239)	Data 0.001 (4.867)	Loss 1.387	Prec@1 67.4581	Prec@5 86.3980
+Train: [85][7000/10010]	Time 0.429 (3006.672)	Data 0.001 (4.997)	Loss 1.387	Prec@1 67.4570	Prec@5 86.3995
+Train: [85][7200/10010]	Time 0.430 (3092.947)	Data 0.001 (5.110)	Loss 1.387	Prec@1 67.4562	Prec@5 86.3997
+Train: [85][7400/10010]	Time 0.430 (3179.078)	Data 0.001 (5.223)	Loss 1.387	Prec@1 67.4454	Prec@5 86.3916
+Train: [85][7600/10010]	Time 0.430 (3265.711)	Data 0.001 (5.374)	Loss 1.388	Prec@1 67.4371	Prec@5 86.3857
+Train: [85][7800/10010]	Time 0.430 (3351.629)	Data 0.001 (5.526)	Loss 1.388	Prec@1 67.4181	Prec@5 86.3770
+Train: [85][8000/10010]	Time 0.430 (3437.880)	Data 0.001 (5.678)	Loss 1.389	Prec@1 67.4270	Prec@5 86.3789
+Train: [85][8200/10010]	Time 0.430 (3523.960)	Data 0.001 (5.829)	Loss 1.388	Prec@1 67.4287	Prec@5 86.3889
+Train: [85][8400/10010]	Time 0.430 (3610.104)	Data 0.001 (5.982)	Loss 1.388	Prec@1 67.4337	Prec@5 86.3918
+Train: [85][8600/10010]	Time 0.430 (3697.210)	Data 0.001 (6.136)	Loss 1.388	Prec@1 67.4314	Prec@5 86.3888
+Train: [85][8800/10010]	Time 0.430 (3783.278)	Data 0.001 (6.289)	Loss 1.389	Prec@1 67.4321	Prec@5 86.3878
+Train: [85][9000/10010]	Time 0.430 (3869.091)	Data 0.001 (6.439)	Loss 1.389	Prec@1 67.4311	Prec@5 86.3850
+Train: [85][9200/10010]	Time 0.430 (3955.332)	Data 0.001 (6.595)	Loss 1.389	Prec@1 67.4277	Prec@5 86.3829
+Train: [85][9400/10010]	Time 0.430 (4041.516)	Data 0.001 (6.749)	Loss 1.389	Prec@1 67.4317	Prec@5 86.3880
+Train: [85][9600/10010]	Time 0.430 (4127.508)	Data 0.001 (6.899)	Loss 1.389	Prec@1 67.4211	Prec@5 86.3805
+Train: [85][9800/10010]	Time 0.430 (4213.619)	Data 0.001 (7.047)	Loss 1.390	Prec@1 67.4114	Prec@5 86.3703
+Train: [85][10000/10010]	Time 0.430 (4300.345)	Data 0.001 (7.194)	Loss 1.390	Prec@1 67.4142	Prec@5 86.3705
+Train: [85]	Time 4300.780	Data 7.195	Loss 1.390	Prec@1 67.4143	Prec@5 86.3705	
+Val: [85]	Time 54.278	Data 1.165	Loss 1.186	Prec@1 70.4580	Prec@5 89.8940	
+Best Prec@1: [70.458]	
+Starting epoch number: 86 Learning rate: 0.0010000000000000002
+Train: [86][0/10010]	Time 1.461 (1.461)	Data 1.000 (1.000)	Loss 1.528	Prec@1 67.1875	Prec@5 84.3750
+Train: [86][200/10010]	Time 0.436 (87.548)	Data 0.006 (1.135)	Loss 1.370	Prec@1 67.6034	Prec@5 86.5827
+Train: [86][400/10010]	Time 0.433 (173.820)	Data 0.003 (1.271)	Loss 1.374	Prec@1 67.7837	Prec@5 86.5239
+Train: [86][600/10010]	Time 0.433 (259.980)	Data 0.002 (1.411)	Loss 1.371	Prec@1 67.8778	Prec@5 86.5849
+Train: [86][800/10010]	Time 0.433 (346.646)	Data 0.002 (1.551)	Loss 1.373	Prec@1 67.7873	Prec@5 86.6144
+Train: [86][1000/10010]	Time 0.432 (432.873)	Data 0.002 (1.691)	Loss 1.373	Prec@1 67.7338	Prec@5 86.6032
+Train: [86][1200/10010]	Time 0.432 (519.098)	Data 0.002 (1.827)	Loss 1.372	Prec@1 67.6695	Prec@5 86.6082
+Train: [86][1400/10010]	Time 0.432 (605.378)	Data 0.001 (1.963)	Loss 1.375	Prec@1 67.6464	Prec@5 86.5749
+Train: [86][1600/10010]	Time 0.432 (691.028)	Data 0.001 (2.097)	Loss 1.375	Prec@1 67.6877	Prec@5 86.5738
+Train: [86][1800/10010]	Time 0.431 (776.944)	Data 0.001 (2.230)	Loss 1.378	Prec@1 67.6590	Prec@5 86.5370
+Train: [86][2000/10010]	Time 0.431 (862.888)	Data 0.001 (2.365)	Loss 1.379	Prec@1 67.6669	Prec@5 86.5286
+Train: [86][2200/10010]	Time 0.432 (949.814)	Data 0.001 (2.506)	Loss 1.378	Prec@1 67.6660	Prec@5 86.5406
+Train: [86][2400/10010]	Time 0.432 (1036.387)	Data 0.001 (2.646)	Loss 1.376	Prec@1 67.6987	Prec@5 86.5661
+Train: [86][2600/10010]	Time 0.432 (1122.477)	Data 0.001 (2.780)	Loss 1.378	Prec@1 67.6624	Prec@5 86.5400
+Train: [86][2800/10010]	Time 0.432 (1208.994)	Data 0.001 (2.920)	Loss 1.379	Prec@1 67.6773	Prec@5 86.5324
+Train: [86][3000/10010]	Time 0.432 (1295.452)	Data 0.001 (3.058)	Loss 1.377	Prec@1 67.6868	Prec@5 86.5516
+Train: [86][3200/10010]	Time 0.432 (1381.422)	Data 0.001 (3.193)	Loss 1.376	Prec@1 67.6888	Prec@5 86.5608
+Train: [86][3400/10010]	Time 0.431 (1467.383)	Data 0.001 (3.327)	Loss 1.377	Prec@1 67.6743	Prec@5 86.5458
+Train: [86][3600/10010]	Time 0.431 (1553.689)	Data 0.001 (3.465)	Loss 1.377	Prec@1 67.6828	Prec@5 86.5439
+Train: [86][3800/10010]	Time 0.431 (1639.919)	Data 0.001 (3.598)	Loss 1.377	Prec@1 67.6615	Prec@5 86.5354
+Train: [86][4000/10010]	Time 0.431 (1726.000)	Data 0.001 (3.732)	Loss 1.378	Prec@1 67.6384	Prec@5 86.5176
+Train: [86][4200/10010]	Time 0.432 (1812.810)	Data 0.001 (3.868)	Loss 1.380	Prec@1 67.5987	Prec@5 86.5006
+Train: [86][4400/10010]	Time 0.432 (1900.265)	Data 0.001 (4.006)	Loss 1.381	Prec@1 67.5892	Prec@5 86.4988
+Train: [86][4600/10010]	Time 0.432 (1986.481)	Data 0.001 (4.141)	Loss 1.381	Prec@1 67.5748	Prec@5 86.5104
+Train: [86][4800/10010]	Time 0.432 (2072.712)	Data 0.001 (4.276)	Loss 1.381	Prec@1 67.5862	Prec@5 86.5137
+Train: [86][5000/10010]	Time 0.432 (2158.856)	Data 0.001 (4.412)	Loss 1.381	Prec@1 67.5659	Prec@5 86.5022
+Train: [86][5200/10010]	Time 0.432 (2244.873)	Data 0.001 (4.547)	Loss 1.382	Prec@1 67.5543	Prec@5 86.4924
+Train: [86][5400/10010]	Time 0.432 (2330.900)	Data 0.001 (4.683)	Loss 1.382	Prec@1 67.5506	Prec@5 86.5003
+Train: [86][5600/10010]	Time 0.432 (2416.920)	Data 0.001 (4.818)	Loss 1.382	Prec@1 67.5495	Prec@5 86.4984
+Train: [86][5800/10010]	Time 0.431 (2502.819)	Data 0.001 (4.952)	Loss 1.381	Prec@1 67.5507	Prec@5 86.5078
+Train: [86][6000/10010]	Time 0.431 (2588.992)	Data 0.001 (5.086)	Loss 1.381	Prec@1 67.5408	Prec@5 86.5029
+Train: [86][6200/10010]	Time 0.431 (2675.086)	Data 0.001 (5.219)	Loss 1.382	Prec@1 67.5288	Prec@5 86.4958
+Train: [86][6400/10010]	Time 0.431 (2761.042)	Data 0.001 (5.351)	Loss 1.383	Prec@1 67.5269	Prec@5 86.4873
+Train: [86][6600/10010]	Time 0.431 (2846.996)	Data 0.001 (5.485)	Loss 1.383	Prec@1 67.5188	Prec@5 86.4772
+Train: [86][6800/10010]	Time 0.431 (2933.036)	Data 0.001 (5.618)	Loss 1.383	Prec@1 67.5190	Prec@5 86.4723
+Train: [86][7000/10010]	Time 0.431 (3019.483)	Data 0.001 (5.755)	Loss 1.383	Prec@1 67.5130	Prec@5 86.4683
+Train: [86][7200/10010]	Time 0.431 (3106.497)	Data 0.001 (5.896)	Loss 1.384	Prec@1 67.5155	Prec@5 86.4643
+Train: [86][7400/10010]	Time 0.431 (3192.498)	Data 0.001 (6.029)	Loss 1.384	Prec@1 67.5159	Prec@5 86.4641
+Train: [86][7600/10010]	Time 0.431 (3278.532)	Data 0.001 (6.164)	Loss 1.384	Prec@1 67.5071	Prec@5 86.4526
+Train: [86][7800/10010]	Time 0.431 (3364.512)	Data 0.001 (6.294)	Loss 1.384	Prec@1 67.5087	Prec@5 86.4574
+Train: [86][8000/10010]	Time 0.431 (3450.682)	Data 0.001 (6.428)	Loss 1.385	Prec@1 67.5043	Prec@5 86.4511
+Train: [86][8200/10010]	Time 0.431 (3536.732)	Data 0.001 (6.560)	Loss 1.385	Prec@1 67.4873	Prec@5 86.4377
+Train: [86][8400/10010]	Time 0.431 (3622.796)	Data 0.001 (6.693)	Loss 1.385	Prec@1 67.4948	Prec@5 86.4444
+Train: [86][8600/10010]	Time 0.431 (3708.800)	Data 0.001 (6.824)	Loss 1.385	Prec@1 67.4919	Prec@5 86.4376
+Train: [86][8800/10010]	Time 0.431 (3795.561)	Data 0.001 (6.960)	Loss 1.386	Prec@1 67.4848	Prec@5 86.4307
+Train: [86][9000/10010]	Time 0.431 (3881.907)	Data 0.001 (7.096)	Loss 1.385	Prec@1 67.4882	Prec@5 86.4277
+Train: [86][9200/10010]	Time 0.431 (3968.035)	Data 0.001 (7.229)	Loss 1.386	Prec@1 67.4878	Prec@5 86.4207
+Train: [86][9400/10010]	Time 0.431 (4054.334)	Data 0.001 (7.366)	Loss 1.386	Prec@1 67.4880	Prec@5 86.4185
+Train: [86][9600/10010]	Time 0.431 (4140.394)	Data 0.001 (7.501)	Loss 1.386	Prec@1 67.4870	Prec@5 86.4213
+Train: [86][9800/10010]	Time 0.431 (4226.278)	Data 0.001 (7.632)	Loss 1.386	Prec@1 67.4818	Prec@5 86.4190
+Train: [86][10000/10010]	Time 0.431 (4311.982)	Data 0.001 (7.761)	Loss 1.386	Prec@1 67.4783	Prec@5 86.4159
+Train: [86]	Time 4312.400	Data 7.761	Loss 1.386	Prec@1 67.4787	Prec@5 86.4163	
+Val: [86]	Time 54.517	Data 1.229	Loss 1.197	Prec@1 70.2700	Prec@5 89.8100	
+Best Prec@1: [70.458]	
+Starting epoch number: 87 Learning rate: 0.0010000000000000002
+Train: [87][0/10010]	Time 1.561 (1.561)	Data 1.065 (1.065)	Loss 1.165	Prec@1 65.6250	Prec@5 92.1875
+Train: [87][200/10010]	Time 0.434 (87.139)	Data 0.006 (1.198)	Loss 1.360	Prec@1 67.6928	Prec@5 86.6993
+Train: [87][400/10010]	Time 0.432 (173.201)	Data 0.003 (1.336)	Loss 1.366	Prec@1 67.5888	Prec@5 86.5648
+Train: [87][600/10010]	Time 0.431 (259.159)	Data 0.002 (1.471)	Loss 1.365	Prec@1 67.5970	Prec@5 86.6226
+Train: [87][800/10010]	Time 0.431 (345.284)	Data 0.002 (1.607)	Loss 1.371	Prec@1 67.5825	Prec@5 86.5500
+Train: [87][1000/10010]	Time 0.431 (431.510)	Data 0.002 (1.744)	Loss 1.378	Prec@1 67.4708	Prec@5 86.4206
+Train: [87][1200/10010]	Time 0.431 (517.323)	Data 0.002 (1.879)	Loss 1.378	Prec@1 67.4666	Prec@5 86.4559
+Train: [87][1400/10010]	Time 0.430 (603.043)	Data 0.001 (2.014)	Loss 1.379	Prec@1 67.5059	Prec@5 86.4371
+Train: [87][1600/10010]	Time 0.430 (688.942)	Data 0.001 (2.148)	Loss 1.379	Prec@1 67.5325	Prec@5 86.4767
+Train: [87][1800/10010]	Time 0.430 (774.795)	Data 0.001 (2.283)	Loss 1.380	Prec@1 67.5037	Prec@5 86.4455
+Train: [87][2000/10010]	Time 0.430 (860.675)	Data 0.001 (2.416)	Loss 1.380	Prec@1 67.5034	Prec@5 86.4454
+Train: [87][2200/10010]	Time 0.430 (946.664)	Data 0.001 (2.553)	Loss 1.380	Prec@1 67.4924	Prec@5 86.4561
+Train: [87][2400/10010]	Time 0.430 (1032.666)	Data 0.001 (2.686)	Loss 1.381	Prec@1 67.5074	Prec@5 86.4636
+Train: [87][2600/10010]	Time 0.430 (1118.686)	Data 0.001 (2.821)	Loss 1.380	Prec@1 67.5140	Prec@5 86.4709
+Train: [87][2800/10010]	Time 0.430 (1204.755)	Data 0.001 (2.957)	Loss 1.380	Prec@1 67.5493	Prec@5 86.4739
+Train: [87][3000/10010]	Time 0.430 (1290.850)	Data 0.001 (3.091)	Loss 1.379	Prec@1 67.5757	Prec@5 86.4777
+Train: [87][3200/10010]	Time 0.430 (1376.891)	Data 0.001 (3.226)	Loss 1.378	Prec@1 67.6063	Prec@5 86.4981
+Train: [87][3400/10010]	Time 0.430 (1462.522)	Data 0.001 (3.358)	Loss 1.379	Prec@1 67.5982	Prec@5 86.4968
+Train: [87][3600/10010]	Time 0.430 (1548.324)	Data 0.001 (3.488)	Loss 1.379	Prec@1 67.5982	Prec@5 86.4975
+Train: [87][3800/10010]	Time 0.430 (1634.019)	Data 0.001 (3.619)	Loss 1.380	Prec@1 67.5846	Prec@5 86.4951
+Train: [87][4000/10010]	Time 0.430 (1719.669)	Data 0.001 (3.752)	Loss 1.380	Prec@1 67.5817	Prec@5 86.4838
+Train: [87][4200/10010]	Time 0.430 (1805.260)	Data 0.001 (3.884)	Loss 1.379	Prec@1 67.5674	Prec@5 86.4915
+Train: [87][4400/10010]	Time 0.430 (1891.110)	Data 0.001 (4.015)	Loss 1.379	Prec@1 67.5743	Prec@5 86.4967
+Train: [87][4600/10010]	Time 0.430 (1977.036)	Data 0.001 (4.147)	Loss 1.381	Prec@1 67.5549	Prec@5 86.4729
+Train: [87][4800/10010]	Time 0.430 (2062.940)	Data 0.001 (4.279)	Loss 1.381	Prec@1 67.5282	Prec@5 86.4696
+Train: [87][5000/10010]	Time 0.430 (2148.858)	Data 0.001 (4.412)	Loss 1.382	Prec@1 67.5104	Prec@5 86.4607
+Train: [87][5200/10010]	Time 0.430 (2235.111)	Data 0.001 (4.546)	Loss 1.382	Prec@1 67.4869	Prec@5 86.4479
+Train: [87][5400/10010]	Time 0.430 (2321.089)	Data 0.001 (4.679)	Loss 1.382	Prec@1 67.4845	Prec@5 86.4506
+Train: [87][5600/10010]	Time 0.430 (2407.059)	Data 0.001 (4.809)	Loss 1.382	Prec@1 67.4974	Prec@5 86.4596
+Train: [87][5800/10010]	Time 0.430 (2493.118)	Data 0.001 (4.941)	Loss 1.382	Prec@1 67.4960	Prec@5 86.4450
+Train: [87][6000/10010]	Time 0.430 (2578.722)	Data 0.001 (5.074)	Loss 1.383	Prec@1 67.4946	Prec@5 86.4319
+Train: [87][6200/10010]	Time 0.430 (2664.372)	Data 0.001 (5.205)	Loss 1.384	Prec@1 67.4761	Prec@5 86.4258
+Train: [87][6400/10010]	Time 0.430 (2749.958)	Data 0.001 (5.337)	Loss 1.384	Prec@1 67.4834	Prec@5 86.4176
+Train: [87][6600/10010]	Time 0.430 (2835.931)	Data 0.001 (5.472)	Loss 1.385	Prec@1 67.4738	Prec@5 86.4108
+Train: [87][6800/10010]	Time 0.430 (2922.051)	Data 0.001 (5.606)	Loss 1.385	Prec@1 67.4620	Prec@5 86.3984
+Train: [87][7000/10010]	Time 0.430 (3008.085)	Data 0.001 (5.737)	Loss 1.386	Prec@1 67.4610	Prec@5 86.3941
+Train: [87][7200/10010]	Time 0.430 (3094.049)	Data 0.001 (5.870)	Loss 1.386	Prec@1 67.4616	Prec@5 86.3957
+Train: [87][7400/10010]	Time 0.430 (3180.162)	Data 0.001 (6.003)	Loss 1.386	Prec@1 67.4614	Prec@5 86.3921
+Train: [87][7600/10010]	Time 0.430 (3266.194)	Data 0.001 (6.138)	Loss 1.386	Prec@1 67.4594	Prec@5 86.3962
+Train: [87][7800/10010]	Time 0.430 (3352.080)	Data 0.001 (6.270)	Loss 1.386	Prec@1 67.4563	Prec@5 86.3996
+Train: [87][8000/10010]	Time 0.430 (3438.605)	Data 0.001 (6.408)	Loss 1.386	Prec@1 67.4565	Prec@5 86.3979
+Train: [87][8200/10010]	Time 0.430 (3524.548)	Data 0.001 (6.542)	Loss 1.386	Prec@1 67.4433	Prec@5 86.3970
+Train: [87][8400/10010]	Time 0.430 (3610.298)	Data 0.001 (6.674)	Loss 1.387	Prec@1 67.4405	Prec@5 86.3902
+Train: [87][8600/10010]	Time 0.430 (3696.374)	Data 0.001 (6.808)	Loss 1.387	Prec@1 67.4370	Prec@5 86.3901
+Train: [87][8800/10010]	Time 0.430 (3782.995)	Data 0.001 (6.946)	Loss 1.387	Prec@1 67.4403	Prec@5 86.3846
+Train: [87][9000/10010]	Time 0.430 (3870.135)	Data 0.001 (7.086)	Loss 1.387	Prec@1 67.4331	Prec@5 86.3811
+Train: [87][9200/10010]	Time 0.430 (3956.056)	Data 0.001 (7.215)	Loss 1.387	Prec@1 67.4263	Prec@5 86.3795
+Train: [87][9400/10010]	Time 0.430 (4042.161)	Data 0.001 (7.346)	Loss 1.387	Prec@1 67.4228	Prec@5 86.3760
+Train: [87][9600/10010]	Time 0.430 (4128.008)	Data 0.001 (7.477)	Loss 1.387	Prec@1 67.4257	Prec@5 86.3815
+Train: [87][9800/10010]	Time 0.430 (4213.865)	Data 0.001 (7.609)	Loss 1.387	Prec@1 67.4222	Prec@5 86.3844
+Train: [87][10000/10010]	Time 0.430 (4299.880)	Data 0.001 (7.739)	Loss 1.387	Prec@1 67.4161	Prec@5 86.3814
+Train: [87]	Time 4300.297	Data 7.739	Loss 1.387	Prec@1 67.4161	Prec@5 86.3812	
+Val: [87]	Time 54.698	Data 1.118	Loss 1.198	Prec@1 70.2080	Prec@5 89.8420	
+Best Prec@1: [70.458]	
+Starting epoch number: 88 Learning rate: 0.0010000000000000002
+Train: [88][0/10010]	Time 1.547 (1.547)	Data 1.077 (1.077)	Loss 1.351	Prec@1 66.4062	Prec@5 85.9375
+Train: [88][200/10010]	Time 0.434 (87.275)	Data 0.006 (1.211)	Loss 1.363	Prec@1 68.0348	Prec@5 86.6604
+Train: [88][400/10010]	Time 0.432 (173.358)	Data 0.003 (1.345)	Loss 1.367	Prec@1 67.9610	Prec@5 86.6350
+Train: [88][600/10010]	Time 0.432 (259.423)	Data 0.002 (1.482)	Loss 1.369	Prec@1 67.8908	Prec@5 86.6174
+Train: [88][800/10010]	Time 0.432 (346.211)	Data 0.002 (1.621)	Loss 1.366	Prec@1 67.9600	Prec@5 86.6173
+Train: [88][1000/10010]	Time 0.433 (433.070)	Data 0.002 (1.761)	Loss 1.366	Prec@1 67.9758	Prec@5 86.6384
+Train: [88][1200/10010]	Time 0.432 (519.055)	Data 0.002 (1.897)	Loss 1.369	Prec@1 67.9531	Prec@5 86.5919
+Train: [88][1400/10010]	Time 0.432 (604.825)	Data 0.001 (2.033)	Loss 1.372	Prec@1 67.8589	Prec@5 86.5470
+Train: [88][1600/10010]	Time 0.431 (690.766)	Data 0.001 (2.167)	Loss 1.371	Prec@1 67.8468	Prec@5 86.5548
+Train: [88][1800/10010]	Time 0.431 (776.713)	Data 0.001 (2.302)	Loss 1.372	Prec@1 67.8208	Prec@5 86.5353
+Train: [88][2000/10010]	Time 0.431 (862.675)	Data 0.001 (2.438)	Loss 1.374	Prec@1 67.7556	Prec@5 86.5064
+Train: [88][2200/10010]	Time 0.431 (948.539)	Data 0.001 (2.572)	Loss 1.375	Prec@1 67.7373	Prec@5 86.4937
+Train: [88][2400/10010]	Time 0.431 (1034.305)	Data 0.001 (2.706)	Loss 1.376	Prec@1 67.7156	Prec@5 86.4783
+Train: [88][2600/10010]	Time 0.431 (1120.310)	Data 0.001 (2.840)	Loss 1.376	Prec@1 67.7155	Prec@5 86.4848
+Train: [88][2800/10010]	Time 0.431 (1206.113)	Data 0.001 (2.973)	Loss 1.375	Prec@1 67.7297	Prec@5 86.4937
+Train: [88][3000/10010]	Time 0.430 (1291.791)	Data 0.001 (3.105)	Loss 1.374	Prec@1 67.7594	Prec@5 86.5186
+Train: [88][3200/10010]	Time 0.430 (1377.749)	Data 0.001 (3.238)	Loss 1.376	Prec@1 67.7332	Prec@5 86.4803
+Train: [88][3400/10010]	Time 0.430 (1463.748)	Data 0.001 (3.371)	Loss 1.376	Prec@1 67.7285	Prec@5 86.4711
+Train: [88][3600/10010]	Time 0.430 (1549.683)	Data 0.001 (3.499)	Loss 1.377	Prec@1 67.7149	Prec@5 86.4608
+Train: [88][3800/10010]	Time 0.431 (1636.533)	Data 0.001 (3.634)	Loss 1.377	Prec@1 67.6929	Prec@5 86.4612
+Train: [88][4000/10010]	Time 0.430 (1722.334)	Data 0.001 (3.768)	Loss 1.378	Prec@1 67.6708	Prec@5 86.4411
+Train: [88][4200/10010]	Time 0.431 (1808.607)	Data 0.001 (3.905)	Loss 1.378	Prec@1 67.6548	Prec@5 86.4450
+Train: [88][4400/10010]	Time 0.430 (1894.555)	Data 0.001 (4.039)	Loss 1.379	Prec@1 67.6361	Prec@5 86.4310
+Train: [88][4600/10010]	Time 0.430 (1980.692)	Data 0.001 (4.173)	Loss 1.380	Prec@1 67.6140	Prec@5 86.4294
+Train: [88][4800/10010]	Time 0.431 (2067.614)	Data 0.001 (4.313)	Loss 1.381	Prec@1 67.6026	Prec@5 86.4167
+Train: [88][5000/10010]	Time 0.431 (2154.530)	Data 0.001 (4.454)	Loss 1.382	Prec@1 67.5774	Prec@5 86.4044
+Train: [88][5200/10010]	Time 0.431 (2241.455)	Data 0.001 (4.595)	Loss 1.382	Prec@1 67.5803	Prec@5 86.4173
+Train: [88][5400/10010]	Time 0.431 (2327.506)	Data 0.001 (4.728)	Loss 1.382	Prec@1 67.5642	Prec@5 86.4163
+Train: [88][5600/10010]	Time 0.431 (2413.350)	Data 0.001 (4.858)	Loss 1.383	Prec@1 67.5415	Prec@5 86.4177
+Train: [88][5800/10010]	Time 0.431 (2499.231)	Data 0.001 (4.991)	Loss 1.383	Prec@1 67.5464	Prec@5 86.4217
+Train: [88][6000/10010]	Time 0.431 (2585.115)	Data 0.001 (5.123)	Loss 1.383	Prec@1 67.5546	Prec@5 86.4178
+Train: [88][6200/10010]	Time 0.431 (2670.970)	Data 0.001 (5.255)	Loss 1.383	Prec@1 67.5468	Prec@5 86.4194
+Train: [88][6400/10010]	Time 0.431 (2756.841)	Data 0.001 (5.387)	Loss 1.383	Prec@1 67.5476	Prec@5 86.4142
+Train: [88][6600/10010]	Time 0.431 (2842.819)	Data 0.001 (5.518)	Loss 1.383	Prec@1 67.5353	Prec@5 86.4115
+Train: [88][6800/10010]	Time 0.431 (2928.649)	Data 0.001 (5.654)	Loss 1.384	Prec@1 67.5367	Prec@5 86.4100
+Train: [88][7000/10010]	Time 0.431 (3014.362)	Data 0.001 (5.789)	Loss 1.383	Prec@1 67.5366	Prec@5 86.4196
+Train: [88][7200/10010]	Time 0.431 (3100.167)	Data 0.001 (5.923)	Loss 1.383	Prec@1 67.5243	Prec@5 86.4234
+Train: [88][7400/10010]	Time 0.430 (3185.872)	Data 0.001 (6.056)	Loss 1.384	Prec@1 67.5238	Prec@5 86.4246
+Train: [88][7600/10010]	Time 0.430 (3271.788)	Data 0.001 (6.190)	Loss 1.383	Prec@1 67.5217	Prec@5 86.4216
+Train: [88][7800/10010]	Time 0.430 (3357.765)	Data 0.001 (6.324)	Loss 1.384	Prec@1 67.5134	Prec@5 86.4189
+Train: [88][8000/10010]	Time 0.430 (3444.091)	Data 0.001 (6.458)	Loss 1.384	Prec@1 67.5082	Prec@5 86.4179
+Train: [88][8200/10010]	Time 0.430 (3530.258)	Data 0.001 (6.591)	Loss 1.384	Prec@1 67.5153	Prec@5 86.4213
+Train: [88][8400/10010]	Time 0.430 (3616.424)	Data 0.001 (6.721)	Loss 1.384	Prec@1 67.5040	Prec@5 86.4210
+Train: [88][8600/10010]	Time 0.430 (3702.673)	Data 0.001 (6.853)	Loss 1.385	Prec@1 67.4986	Prec@5 86.4200
+Train: [88][8800/10010]	Time 0.430 (3788.576)	Data 0.001 (6.984)	Loss 1.385	Prec@1 67.4920	Prec@5 86.4217
+Train: [88][9000/10010]	Time 0.430 (3874.534)	Data 0.001 (7.117)	Loss 1.385	Prec@1 67.4851	Prec@5 86.4144
+Train: [88][9200/10010]	Time 0.430 (3960.407)	Data 0.001 (7.249)	Loss 1.385	Prec@1 67.4830	Prec@5 86.4097
+Train: [88][9400/10010]	Time 0.430 (4046.281)	Data 0.001 (7.382)	Loss 1.385	Prec@1 67.4799	Prec@5 86.4074
+Train: [88][9600/10010]	Time 0.430 (4132.255)	Data 0.001 (7.515)	Loss 1.385	Prec@1 67.4769	Prec@5 86.4022
+Train: [88][9800/10010]	Time 0.430 (4218.050)	Data 0.001 (7.651)	Loss 1.386	Prec@1 67.4650	Prec@5 86.3933
+Train: [88][10000/10010]	Time 0.430 (4304.203)	Data 0.001 (7.782)	Loss 1.386	Prec@1 67.4579	Prec@5 86.3944
+Train: [88]	Time 4304.618	Data 7.782	Loss 1.386	Prec@1 67.4575	Prec@5 86.3941	
+Val: [88]	Time 53.865	Data 1.273	Loss 1.190	Prec@1 70.3000	Prec@5 89.7780	
+Best Prec@1: [70.458]	
+Starting epoch number: 89 Learning rate: 0.0010000000000000002
+Train: [89][0/10010]	Time 1.504 (1.504)	Data 1.071 (1.071)	Loss 1.665	Prec@1 62.5000	Prec@5 84.3750
+Train: [89][200/10010]	Time 0.438 (88.018)	Data 0.006 (1.205)	Loss 1.381	Prec@1 67.6734	Prec@5 86.5322
+Train: [89][400/10010]	Time 0.436 (174.805)	Data 0.003 (1.343)	Loss 1.364	Prec@1 67.8207	Prec@5 86.6681
+Train: [89][600/10010]	Time 0.433 (260.445)	Data 0.002 (1.477)	Loss 1.374	Prec@1 67.7010	Prec@5 86.5264
+Train: [89][800/10010]	Time 0.432 (346.170)	Data 0.002 (1.609)	Loss 1.376	Prec@1 67.6898	Prec@5 86.4934
+Train: [89][1000/10010]	Time 0.432 (432.013)	Data 0.002 (1.743)	Loss 1.373	Prec@1 67.8049	Prec@5 86.5486
+Train: [89][1200/10010]	Time 0.431 (517.711)	Data 0.002 (1.876)	Loss 1.373	Prec@1 67.8243	Prec@5 86.5392
+Train: [89][1400/10010]	Time 0.431 (603.415)	Data 0.001 (2.012)	Loss 1.370	Prec@1 67.8762	Prec@5 86.5682
+Train: [89][1600/10010]	Time 0.430 (689.205)	Data 0.001 (2.146)	Loss 1.371	Prec@1 67.8741	Prec@5 86.5704
+Train: [89][1800/10010]	Time 0.430 (775.150)	Data 0.001 (2.282)	Loss 1.370	Prec@1 67.8729	Prec@5 86.5695
+Train: [89][2000/10010]	Time 0.430 (861.259)	Data 0.001 (2.416)	Loss 1.370	Prec@1 67.8446	Prec@5 86.5548
+Train: [89][2200/10010]	Time 0.430 (947.231)	Data 0.001 (2.551)	Loss 1.371	Prec@1 67.8456	Prec@5 86.5423
+Train: [89][2400/10010]	Time 0.430 (1033.421)	Data 0.001 (2.689)	Loss 1.373	Prec@1 67.8168	Prec@5 86.5112
+Train: [89][2600/10010]	Time 0.430 (1119.730)	Data 0.001 (2.824)	Loss 1.376	Prec@1 67.7474	Prec@5 86.4520
+Train: [89][2800/10010]	Time 0.431 (1206.033)	Data 0.001 (2.961)	Loss 1.375	Prec@1 67.7682	Prec@5 86.4722
+Train: [89][3000/10010]	Time 0.430 (1291.814)	Data 0.001 (3.094)	Loss 1.375	Prec@1 67.7581	Prec@5 86.4881
+Train: [89][3200/10010]	Time 0.430 (1377.822)	Data 0.001 (3.228)	Loss 1.376	Prec@1 67.7391	Prec@5 86.4942
+Train: [89][3400/10010]	Time 0.430 (1463.880)	Data 0.001 (3.360)	Loss 1.376	Prec@1 67.7335	Prec@5 86.5019
+Train: [89][3600/10010]	Time 0.430 (1549.734)	Data 0.001 (3.488)	Loss 1.376	Prec@1 67.7153	Prec@5 86.5029
+Train: [89][3800/10010]	Time 0.430 (1635.657)	Data 0.001 (3.618)	Loss 1.376	Prec@1 67.7149	Prec@5 86.5278
+Train: [89][4000/10010]	Time 0.430 (1721.629)	Data 0.001 (3.746)	Loss 1.376	Prec@1 67.7159	Prec@5 86.5403
+Train: [89][4200/10010]	Time 0.430 (1807.616)	Data 0.001 (3.878)	Loss 1.377	Prec@1 67.6868	Prec@5 86.5296
+Train: [89][4400/10010]	Time 0.430 (1893.613)	Data 0.001 (4.010)	Loss 1.378	Prec@1 67.6751	Prec@5 86.5190
+Train: [89][4600/10010]	Time 0.430 (1979.759)	Data 0.001 (4.140)	Loss 1.379	Prec@1 67.6711	Prec@5 86.5114
+Train: [89][4800/10010]	Time 0.430 (2065.941)	Data 0.001 (4.272)	Loss 1.379	Prec@1 67.6599	Prec@5 86.5013
+Train: [89][5000/10010]	Time 0.430 (2152.073)	Data 0.001 (4.404)	Loss 1.380	Prec@1 67.6380	Prec@5 86.5005
+Train: [89][5200/10010]	Time 0.430 (2238.225)	Data 0.001 (4.536)	Loss 1.380	Prec@1 67.6222	Prec@5 86.4943
+Train: [89][5400/10010]	Time 0.430 (2324.489)	Data 0.001 (4.668)	Loss 1.381	Prec@1 67.6258	Prec@5 86.4898
+Train: [89][5600/10010]	Time 0.430 (2410.264)	Data 0.001 (4.802)	Loss 1.381	Prec@1 67.6428	Prec@5 86.4857
+Train: [89][5800/10010]	Time 0.430 (2495.970)	Data 0.001 (4.935)	Loss 1.381	Prec@1 67.6372	Prec@5 86.4793
+Train: [89][6000/10010]	Time 0.430 (2581.773)	Data 0.001 (5.067)	Loss 1.381	Prec@1 67.6262	Prec@5 86.4765
+Train: [89][6200/10010]	Time 0.430 (2667.540)	Data 0.001 (5.198)	Loss 1.381	Prec@1 67.6136	Prec@5 86.4820
+Train: [89][6400/10010]	Time 0.430 (2753.488)	Data 0.001 (5.331)	Loss 1.381	Prec@1 67.6119	Prec@5 86.4773
+Train: [89][6600/10010]	Time 0.430 (2839.448)	Data 0.001 (5.465)	Loss 1.381	Prec@1 67.6103	Prec@5 86.4735
+Train: [89][6800/10010]	Time 0.430 (2925.425)	Data 0.001 (5.598)	Loss 1.380	Prec@1 67.6185	Prec@5 86.4837
+Train: [89][7000/10010]	Time 0.430 (3011.529)	Data 0.001 (5.732)	Loss 1.381	Prec@1 67.5936	Prec@5 86.4714
+Train: [89][7200/10010]	Time 0.430 (3097.455)	Data 0.001 (5.865)	Loss 1.382	Prec@1 67.5915	Prec@5 86.4628
+Train: [89][7400/10010]	Time 0.430 (3183.485)	Data 0.001 (6.001)	Loss 1.382	Prec@1 67.5884	Prec@5 86.4625
+Train: [89][7600/10010]	Time 0.430 (3269.659)	Data 0.001 (6.134)	Loss 1.382	Prec@1 67.5789	Prec@5 86.4644
+Train: [89][7800/10010]	Time 0.430 (3355.754)	Data 0.001 (6.265)	Loss 1.383	Prec@1 67.5741	Prec@5 86.4653
+Train: [89][8000/10010]	Time 0.430 (3441.767)	Data 0.001 (6.399)	Loss 1.383	Prec@1 67.5590	Prec@5 86.4702
+Train: [89][8200/10010]	Time 0.430 (3527.720)	Data 0.001 (6.533)	Loss 1.383	Prec@1 67.5525	Prec@5 86.4689
+Train: [89][8400/10010]	Time 0.430 (3613.606)	Data 0.001 (6.666)	Loss 1.383	Prec@1 67.5506	Prec@5 86.4625
+Train: [89][8600/10010]	Time 0.430 (3699.429)	Data 0.001 (6.799)	Loss 1.384	Prec@1 67.5429	Prec@5 86.4572
+Train: [89][8800/10010]	Time 0.430 (3785.260)	Data 0.001 (6.931)	Loss 1.383	Prec@1 67.5458	Prec@5 86.4586
+Train: [89][9000/10010]	Time 0.430 (3871.120)	Data 0.001 (7.063)	Loss 1.383	Prec@1 67.5522	Prec@5 86.4525
+Train: [89][9200/10010]	Time 0.430 (3957.015)	Data 0.001 (7.196)	Loss 1.384	Prec@1 67.5416	Prec@5 86.4515
+Train: [89][9400/10010]	Time 0.430 (4042.977)	Data 0.001 (7.329)	Loss 1.384	Prec@1 67.5347	Prec@5 86.4444
+Train: [89][9600/10010]	Time 0.430 (4129.639)	Data 0.001 (7.466)	Loss 1.384	Prec@1 67.5300	Prec@5 86.4377
+Train: [89][9800/10010]	Time 0.430 (4216.802)	Data 0.001 (7.606)	Loss 1.384	Prec@1 67.5314	Prec@5 86.4367
+Train: [89][10000/10010]	Time 0.430 (4303.852)	Data 0.001 (7.741)	Loss 1.385	Prec@1 67.5300	Prec@5 86.4335
+Train: [89]	Time 4304.273	Data 7.742	Loss 1.385	Prec@1 67.5307	Prec@5 86.4337	
+Val: [89]	Time 55.404	Data 1.419	Loss 1.188	Prec@1 70.3740	Prec@5 89.8000	
+Best Prec@1: [70.458]	
