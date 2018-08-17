@@ -1,6 +1,7 @@
 # Deep-Expander-Networks
 
-This repository contains the code for our ECCV '18 paper
+This repository contains the code for our ECCV '18 paper:
+
 [Deep Expander Networks: Efficient Deep Networks from Graph Theory](https://arxiv.org/pdf/1711.08757.pdf)
 
 [Ameya Prabhu](http://researchweb.iiit.ac.in/~ameya.prabhu)\*, [Girish Varma](https://github.com/geevi)\* and [Anoop Namboodiri](https://faculty.iiit.ac.in/~anoop/)  (\* Authors contributed equally).
