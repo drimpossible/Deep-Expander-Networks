@@ -19,9 +19,12 @@ If you find our work useful in your research, please consider citing:
 ## Contents
 1. Introduction
 2. Installation and Dependencies
+
+## TBA Shortly
+
 2. Usage (Refer run_cifar.sh. Complete  instructions to be updated)
-3. Results on CIFAR
-4. Results on ImageNet
+3. Replication Results on CIFAR
+4. Replication Results on ImageNet
 
 ## Introduction
 Efficient CNN designs like ResNets and DenseNet were proposed to improve accuracy vs efficiency trade-offs. They essentially increased the connectivity, allowing efficient information flow across layers. Inspired by these techniques, we propose to model connections between filters of a CNN using graphs which are simultaneously sparse and well connected. Sparsity results in efficiency while well connectedness can preserve the expressive power of the CNNs. 
