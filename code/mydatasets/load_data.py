@@ -64,14 +64,18 @@ std=[x/255.0 for x in [68.2, 65.4, 70.4]])
 
 class LoadImagenet12():
 	def __init__(self, opt):
-		kwargs = {
+		kwargstrain = {
+		  'num_workers': opt.workers,
+		  'batch_size' : opt.batch_size,
+		  'shuffle' : False,
+		  'pin_memory': True}
+		kwargstest = {
 		  'num_workers': opt.workers,
 		  'batch_size' : opt.batch_size,
 		  'shuffle' : True,
 		  'pin_memory': True}
 		data_transforms = {
 			'train': transforms.Compose([
-				transforms.Resize(opt.inpsize+32),
 				transforms.RandomResizedCrop(opt.inpsize),
 				transforms.RandomHorizontalFlip(),
 				transforms.ToTensor(),
@@ -86,5 +90,5 @@ class LoadImagenet12():
 		}
 		data_dir = opt.data_dir
 		dtsets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x]) for x in ['train', 'val']}
-		self.train_loader = torch.utils.data.DataLoader(dtsets["train"], **kwargs)
-		self.val_loader = torch.utils.data.DataLoader(dtsets["val"], **kwargs)
+		self.train_loader = torch.utils.data.DataLoader(dtsets["train"], **kwargstrain)
+		self.val_loader = torch.utils.data.DataLoader(dtsets["val"], **kwargstest)
