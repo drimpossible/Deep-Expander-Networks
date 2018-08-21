@@ -3,7 +3,8 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision.models as models
 import models.alexnet as alexnet
-import models.alexnetexpander as alexnetexpander
+import models.alexnetexpander1 as alexnetexpander1
+import models.alexnetexpander2 as alexnetexpander2
 import models.densenet_cifar as densenet_cifar
 import models.densenetgrouped_cifar as densenetgrouped_cifar
 import models.densenetexpander_cifar as densenetexpander_cifar
@@ -14,7 +15,6 @@ import models.vggcifar_expander as vggcifarexpander
 import models.resnet_imagenet as resnet
 import models.resnetexpander_imagenet as resnetexpander
 import models.mobilenet as mobilenet
-import models.mobilenetv2_cifar as mobilenetv2_cifar
 
 import utils
 import os
@@ -95,14 +95,6 @@ def load_model(opt):
                 model = mobilenet.Net(nClasses=opt.nclasses, width_mult=opt.widthmult, gtp=opt.grouptype, gsz=opt.sp, expsz=opt.exp)
                 if opt.cuda:
                     model = model.cuda()
-            elif opt.model_def == 'mobilenetv2_cifar':
-                model = mobilenetv2_cifar.Net(n_class=opt.nclasses, input_size=32, width_mult=opt.widthmult, gtype=opt.grouptype, hsp=opt.hsp, lsp=opt.lsp, lexp=opt.lexp, hexp=opt.hexp)
-                if opt.cuda:
-                    model = model.cuda()
-            elif opt.model_def == 'mobilenet':
-                model = mobilenetv2.Net()
-                if opt.cuda:
-                    model = model.cuda()
 
             elif opt.model_def == 'alexnetexpander':
                 model = alexnetexpander.Net()
@@ -132,6 +124,11 @@ def load_model(opt):
             elif opt.model_def == 'densenetgrouped_cifar':
                 model = densenetgrouped_cifar.DenseNet3(opt.layers, opt.nclasses, opt.growth, reduction=opt.reduce,
                 bottleneck=opt.bottleneck, dropRate=opt.droprate)
+                if opt.cuda:
+                    model = model.cuda()
+            elif opt.model_def == 'densenetexpander_cifar':
+                model = densenetexpander_cifar.DenseNet3(opt.layers, opt.nclasses, opt.growth, reduction=opt.reduce,
+                bottleneck=opt.bottleneck, dropRate=opt.droprate, expandSize=opt.expandSize)
                 if opt.cuda:
                     model = model.cuda()
             elif opt.model_def == 'densenet121':
@@ -198,11 +195,7 @@ def load_model(opt):
                 model = resnetexpander.resnet152(opt.expandSize)
                 if opt.cuda:
                     model = model.cuda()
-            elif opt.model_def == 'densenetexpander_cifar':
-                model = densenetexpander_cifar.DenseNet3(opt.layers, opt.nclasses, opt.growth, reduction=opt.reduce,
-                bottleneck=opt.bottleneck, dropRate=opt.droprate, expandSize=opt.expandSize)
-                if opt.cuda:
-                    model = model.cuda()
+
             elif opt.model_def == 'resnet18':
                 model = resnet.resnet18()
                 if opt.cuda:

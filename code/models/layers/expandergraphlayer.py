@@ -60,11 +60,16 @@ class ExpanderLinear(torch.nn.Module):
         self.weight = nn.Parameter(data=torch.Tensor(output_features, input_features), requires_grad=True)
 
         self.mask = torch.zeros(output_features, input_features)
-
-        for i in range(output_features):
-            x = torch.randperm(input_features)
-            for j in range(expandSize):
-                self.mask[i][x[j]] = 1
+        if output_features < input_features:
+            for i in range(output_features):
+                x = torch.randperm(input_features)
+                for j in range(expandSize):
+                    self.mask[i][x[j]] = 1
+        else:
+            for i in range(input_features):
+                x = torch.randperm(output_features)
+                for j in range(expandSize):
+                    self.mask[x[j]][i] = 1
 
         self.mask =  self.mask.cuda()
         nn.init.kaiming_normal(self.weight.data,mode='fan_in')
@@ -131,44 +136,16 @@ class ExpanderConv2d(torch.nn.Module):
 
         self.mask = torch.zeros(inWCout, (inWCin),1,1)
         #print(inWCout,inWCin,expandSize)
-        for i in range(inWCout):
-            x = torch.randperm(inWCin)
-            for j in range(expandSize):
-                self.mask[i][x[j]][0][0] = 1
-
-        self.mask = self.mask.repeat(1, 1, kernel_size, kernel_size)
-        self.mask =  nn.Parameter(self.mask.cuda())
-        self.mask.requires_grad = False
-
-    def forward(self, dataInput):
-        return execute2DConvolution(self.mask, self.conStride, self.conPad,self.conDil, self.conGroups)(dataInput, self.fpWeight)
-
-class ExpanderConv2dReverse(torch.nn.Module):
-    def __init__(self, inWCin, inWCout, kernel_size, expandSize,
-                 stride=1, padding=0, inDil=1, groups=1, mode='random'):
-        super(ExpanderConv2dReverse, self).__init__()
-        # Initialize all parameters that the convolution function needs to know
-        self.kernel_size = kernel_size
-        self.in_channels = inWCin
-        self.out_channels = inWCout
-        self.conStride = stride
-        self.conPad = padding
-        self.outPad = 0
-        self.conDil = inDil
-        self.conTrans = False
-        self.conGroups = groups
-
-        n = kernel_size * kernel_size * inWCout
-        # initialize the weights and the bias as well as the
-        self.fpWeight = torch.nn.Parameter(data=torch.Tensor(inWCout, inWCin, kernel_size, kernel_size), requires_grad=True)
-        nn.init.kaiming_normal(self.fpWeight.data,mode='fan_out')
-
-        self.mask = torch.zeros(inWCout, (inWCin),1,1)
-        #print(inWCout,inWCin,expandSize)
-        for i in range(inWCin):
-            x = torch.randperm(inWCout)
-            for j in range(expandSize):
-                self.mask[x[j]][i][0][0] = 1
+        if inWCin > inWCout:
+            for i in range(inWCout):
+                x = torch.randperm(inWCin)
+                for j in range(expandSize):
+                    self.mask[i][x[j]][0][0] = 1
+        else:
+            for i in range(inWCin):
+                x = torch.randperm(inWCout)
+                for j in range(expandSize):
+                    self.mask[x[j]][i][0][0] = 1
 
         self.mask = self.mask.repeat(1, 1, kernel_size, kernel_size)
         self.mask =  nn.Parameter(self.mask.cuda())
