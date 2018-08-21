@@ -6,7 +6,7 @@ for more details.
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from models.layers.expandergraphlayer import ExpanderConv2dReverse, ExpanderConv2d, channelShuffle
+from models.layers.expandergraphlayer import ExpanderConv2d, channelShuffle
 
 from torch.autograd import Variable
 
@@ -44,16 +44,7 @@ class Net(nn.Module):
                 layer = nn.Conv2d(inp, oup, 1, 1, 0, groups=groupsz, bias=False)
             elif gtype == 'expander':
                 layerdl = nn.Conv2d(inp, inp, 3, stride, 1, groups=inp, bias=False)
-                layer = ExpanderConv2dReverse(inp, oup, kernel_size=1, stride=1, padding=0, expandSize=(oup//groupsz))
-            elif gtype == 'shuffle':
-                layerdl = nn.Conv2d(inp, inp, 3, stride, 1, groups=inp, bias=False)
-                layer = nn.Sequential(nn.Conv2d(inp, oup, 1, 1, 0, groups=groupsz, bias=False),channelShuffle(groupsz))
-            elif gtype == 'expandershuffle':
-                layerdl = nn.Conv2d(inp, inp, 3, stride, 1, groups=inp, bias=False)
-                layer = nn.Sequential(ExpanderConv2dReverse(inp, oup, kernel_size=1, stride=1, padding=0, expandSize=(oup//groupsz)),channelShuffle(groupsz))
-            elif gtype == 'expanderacc':
-                layerdl = ExpanderConv2d(inp, inp, kernel_size=3, stride=stride, padding=1,  expandSize=expandsz)
-                layer = ExpanderConv2dReverse(inp, oup, kernel_size=1, stride=1, padding=0, expandSize=(oup//groupsz))
+                layer = ExpanderConv2d(inp, oup, kernel_size=1, stride=1, padding=0, expandSize=(oup//groupsz))
             return nn.Sequential(
                 layerdl,
                 nn.BatchNorm2d(inp),
