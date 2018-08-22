@@ -15,9 +15,7 @@ If you find our work useful in your research, please consider citing:
 	  booktitle={ECCV},
 	  year={2018}}
 
-## Contents
-
-1. Introduction
+## Introduction
 
 Efficient CNN designs like ResNets and DenseNet were proposed to improve accuracy vs efficiency trade-offs. They essentially increased the connectivity, allowing efficient information flow across layers. Inspired by these techniques, we propose to model connections between filters of a CNN using graphs which are simultaneously sparse and well connected. Sparsity results in efficiency while well connectedness can preserve the expressive power of the CNNs. 
 
@@ -26,7 +24,7 @@ We use a well-studied class of graphs from theoretical computer science that sat
 This repository contains the implementation used for the results in our [paper](https://arxiv.org/pdf/1711.08757.pdf).
  
 
-2. Installation and Dependencies
+## Installation and Dependencies
 
 - Anaconda
 - Pytorch 0.3.1
@@ -37,7 +35,7 @@ Install PyTorch in a new anaconda environment by the command:
 conda install pytorch=0.3.1 torchvision -c soumith
 ```
 
-3. Usage
+## Usage
 
 Here is an example to train a X-VGG network on CIFAR10:
 
