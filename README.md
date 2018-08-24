@@ -26,9 +26,9 @@ This repository contains the implementation used for the results in our [paper](
 
 ## Installation and Dependencies
 
-- Anaconda
-- Pytorch 0.3.1
-- Torchvision
+- [Anaconda](https://www.anaconda.com/download/)
+- [Pytorch 0.3.1 & Torchvision](https://pytorch.org/previous-versions/)
+- [ImageNet](https://www.image-net.org/challenges/LSVRC/2012/)
 
 Install PyTorch in a new anaconda environment by the command:
 ```
@@ -56,15 +56,32 @@ We use the Pytorch dataloader format for the ImageNet dataset. Preprocessing ins
 bash clean.sh; python main.py --dataset='imagenet12' --ngpus=1 --data_dir='<PATH TO IMAGENET FOLDER>' --nclasses=1000 --workers=8 --epochs=90 --batch-size=128 --learningratescheduler='imagenetschedular' --decayinterval=30 --decaylevel=10 --optimType='sgd' --verbose --maxlr=0.1 --nesterov --minlr=0.00001 --weightDecay=1e-4 --model_def='resnetexpander34' --expandSize=2 --name='imagenet_resnetexpander34_expandsize2' | tee "../logs/imagenet_resnetexpander34_expandsize2.txt"
 ```
 
-## TBA
+## TBA 
 
-4. Replication Results on CIFAR
+Pretrained models available here:
 
-5. Replication Results on ImageNet
+### Results on ImageNet
+
+| Model | FLOPs | Top-1 Err. | Pytorch Model |
+|---|---|---|---|
+| X-Mobilenet0.5-2 | 85.8M | 41.7 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
+| X-Mobilenet0.5-4 | 53.7M | 45.7 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
+| X-Mobilenet0.5-8 | 37.6M | 50.5 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
+| X-Mobilenet0.5-16 | 29.5M | 55.3 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
+
+### Results on CIFAR
+
+| Model | Params (in M) | FLOPs (100M) | CIFAR-10 | CIFAR-100 | Pytorch Model |
+|---|---|---|---|---|---|
+| X-DenseNet-BC-40-24-2 | 0.4M | 1.44 | 94.83 | 74.37 | [Download](#) |
+| X-DenseNet-BC-40-36-2 | 0.75M | 3.24 | 94.98 | 76.69 | [Download](#) |
+| X-DenseNet-BC-40-48-2 | 1.4M | 5.75 | 95.48 | 77.7 | [Download](#) |
+| X-DenseNet-BC-40-60-2 | 2.15M | 8.98 | 95.71 | 78.53 | [Download](#) |
 
 ## Contact
 
 Please do get in touch with us by email for any questions, comments, suggestions you have!
+
 ameya dot pandurang dot prabhu at gmail dot com  
 girish dot varma at iiit dot ac dot in
 
