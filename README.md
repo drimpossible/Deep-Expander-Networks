@@ -64,10 +64,10 @@ Pretrained models available here:
 
 | Model | FLOPs | Top-1 Err. | Pytorch Model |
 |---|---|---|---|
-| X-Mobilenet0.5-2 | 85.8M | 41.7 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
-| X-Mobilenet0.5-4 | 53.7M | 45.7 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
-| X-Mobilenet0.5-8 | 37.6M | 50.5 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
-| X-Mobilenet0.5-16 | 29.5M | 55.3 | [Download](https://drive.google.com/drive/u/1/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt) |
+| X-Mobilenet0.5-2 | 85.8M | 41.7 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
+| X-Mobilenet0.5-4 | 53.7M | 45.7 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
+| X-Mobilenet0.5-8 | 37.6M | 50.5 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
+| X-Mobilenet0.5-16 | 29.5M | 55.3 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
 
 ### Results on CIFAR
 
