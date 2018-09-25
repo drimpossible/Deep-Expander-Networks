@@ -10,12 +10,12 @@ This repository contains the code for our ECCV '18 paper:
 If you find our work useful in your research, please consider citing:
 
 	@InProceedings{Prabhu_2018_ECCV,
-author = {Prabhu, Ameya and Varma, Girish and Namboodiri, Anoop},
-title = {Deep Expander Networks: Efficient Deep Networks from Graph Theory},
-booktitle = {The European Conference on Computer Vision (ECCV)},
-month = {September},
-year = {2018}
-} 
+	author = {Prabhu, Ameya and Varma, Girish and Namboodiri, Anoop},
+	title = {Deep Expander Networks: Efficient Deep Networks from Graph Theory},
+	booktitle = {The European Conference on Computer Vision (ECCV)},
+	month = {September},
+	year = {2018}
+	} 
 
 ## Introduction
 
