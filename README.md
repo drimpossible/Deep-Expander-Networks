@@ -58,8 +58,6 @@ We use the Pytorch dataloader format for the ImageNet dataset. Preprocessing ins
 bash clean.sh; python main.py --dataset='imagenet12' --ngpus=1 --data_dir='<PATH TO IMAGENET FOLDER>' --nclasses=1000 --workers=8 --epochs=90 --batch-size=128 --learningratescheduler='imagenetschedular' --decayinterval=30 --decaylevel=10 --optimType='sgd' --verbose --maxlr=0.1 --nesterov --minlr=0.00001 --weightDecay=1e-4 --model_def='resnetexpander34' --expandSize=2 --name='imagenet_resnetexpander34_expandsize2' | tee "../logs/imagenet_resnetexpander34_expandsize2.txt"
 ```
 
-## TBA 
-
 Pretrained models available here:
 
 ### Results on ImageNet
@@ -75,10 +73,10 @@ Pretrained models available here:
 
 | Model | Params (in M) | FLOPs (100M) | CIFAR-10 | CIFAR-100 | Pytorch Model |
 |---|---|---|---|---|---|
-| X-DenseNet-BC-40-24-2 | 0.4M | 1.44 | 94.83 | 74.37 | [Download](#) |
-| X-DenseNet-BC-40-36-2 | 0.75M | 3.24 | 94.98 | 76.69 | [Download](#) |
-| X-DenseNet-BC-40-48-2 | 1.4M | 5.75 | 95.48 | 77.7 | [Download](#) |
-| X-DenseNet-BC-40-60-2 | 2.15M | 8.98 | 95.71 | 78.53 | [Download](#) |
+| X-DenseNet-BC-40-24-2 | 0.4M | 1.44 | 94.83 | 74.37 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
+| X-DenseNet-BC-40-36-2 | 0.75M | 3.24 | 94.98 | 76.69 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
+| X-DenseNet-BC-40-48-2 | 1.4M | 5.75 | 95.48 | 77.7 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
+| X-DenseNet-BC-40-60-2 | 2.15M | 8.98 | 95.71 | 78.53 | [Download](https://drive.google.com/drive/folders/1wNpSMxo6aerjKP50Rj5zuSmOhaDq5jwt?usp=sharing) |
 
 ## Contact
 
