@@ -85,4 +85,5 @@ Please do get in touch with us by email for any questions, comments, suggestions
 ameya dot pandurang dot prabhu at gmail dot com  
 girish dot varma at iiit dot ac dot in
 
+Code format inspired from my mentor's codes [Riddhiman Dasgupta](https://github.com/dasguptar)
 Formatting borrowed from the [DenseNet repository](https://raw.githubusercontent.com/liuzhuang13/DenseNet)
