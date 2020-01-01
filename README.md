@@ -49,6 +49,8 @@ $ conda activate expander_env
 
 ## Usage
 
+First, create the `./code/savedmodels` folder if it does not exist.
+
 Here is an example to train a X-VGG network on CIFAR10:
 
 ```
