@@ -33,11 +33,23 @@ This repository contains the implementation used for the results in our [paper](
 - [ImageNet](https://www.image-net.org/challenges/LSVRC/2012/)
 
 Install PyTorch in a new anaconda environment by the command:
+
+```shell
+$ conda create --name expander_env
+$ conda activate expander_env
+$ conda install pytorch=0.3.1 torchvision cuda90 -c pytorch
 ```
-conda install pytorch=0.3.1 torchvision -c soumith
+
+or just simply create a new anaconda environment from the environment file:
+
+```shell
+$ conda create --name expander_env --file expander_env.txt
+$ conda activate expander_env
 ```
 
 ## Usage
+
+First, create the `./code/savedmodels` folder if it does not exist.
 
 Here is an example to train a X-VGG network on CIFAR10:
 
